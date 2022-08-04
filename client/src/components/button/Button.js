@@ -1,30 +1,26 @@
 import styled from "styled-components/macro";
 
 const Button = styled.button`
-  padding: 10px;
-  ont-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 25px;
   min-width: 150px;
-  background: white;
-  display: inline-block;
-  background: linear-gradient(
-    to right,
-    #ff6362 0%,
-    #ff6362 50%,
-    #ffffff 50%,
-    #ffffff 100%
-  );
-  margin-right: 5px;
+  line-height: 156.19%;
+  padding: 7px;
+  color: black;
+  letter-spacing: 0.03em;
+  border: none;
+  border-bottom: 1px solid #5e5e5e;
   border-radius: 25px;
-  border: 5px solid #fff0f1;
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: background-position 0.3s;
-  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  margin: 5px;
+  background-color: white;
+
   &:hover {
-    background-position: 0 0;
     border: none;
+    border-bottom: 1px solid white;
+    background-color: #ff6362;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
   }
 `;

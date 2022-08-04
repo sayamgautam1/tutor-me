@@ -5,6 +5,7 @@ import TimelineRow from "./TimelineRow";
 import teacher from "./teacher.jpeg";
 import Heading from "../../components/Heading";
 import Paragraph from "../../components/Paragraph";
+import Hamburger from "../../components/hamburger/Hamburger";
 
 const FadeOut = keyframes`
   0%{
@@ -115,23 +116,26 @@ const RowSpacer = styled.div`
 `;
 const Landing = () => {
   return (
-    <Layout>
+    <>
       <Header />
-      <Content>
-        <Left>
-          <HeaderText>
-            <Heading>Find your perfect Tutor</Heading>
-            <Paragraph>Learning has never been this easy</Paragraph>
-          </HeaderText>
-        </Left>
-        <Right>
-          <RightImage />
-        </Right>
-      </Content>
-      <RowSpacer />
-      <TimelineRow />
-      <RowSpacer />
-    </Layout>
+      <Layout>
+        <Hamburger />
+        <Content>
+          <Left>
+            <HeaderText>
+              <Heading>Find your perfect Tutor</Heading>
+              <Paragraph>Learning has never been this easy</Paragraph>
+            </HeaderText>
+          </Left>
+          <Right>
+            <RightImage />
+          </Right>
+        </Content>
+        <RowSpacer />
+        <TimelineRow />
+        <RowSpacer />
+      </Layout>
+    </>
   );
 };
 
