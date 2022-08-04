@@ -2,6 +2,8 @@ import styled, { keyframes } from "styled-components";
 import Header from "../../components/header/Header";
 import { breakpoints } from "../../components/Media";
 import TimelineRow from "./TimelineRow";
+import studnet from "./studnet.jpeg";
+import teacher from "./teacher.jpeg";
 
 const FadeOut = keyframes`
   0%{
@@ -35,7 +37,7 @@ const Layout = styled.div`
 
 const Content = styled.div`
   max-width: 2000px;
-  min-height: 100%;
+  height: 100%;
   margin: 0 auto;
   background-color: #fff0f1;
   display: flex;
@@ -43,6 +45,7 @@ const Content = styled.div`
   flex-wrap: wrap;
   flex: 1;
   position: relative;
+  border-radius: 5%;
 `;
 const Left = styled.div`
   flex: 100%;
@@ -65,6 +68,62 @@ const Right = styled.div`
     flex-wrap: wrap;
   }
 `;
+const HeaderText = styled.div`
+  flex: 100%;
+  padding: 20px;
+  @media (min-width: 900px) {
+    padding: 0;
+    width: 50%;
+    min-width: 200px;
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+    background-position: center center;
+  }
+  h1 {
+    font-family: "Lato", sans-serif;
+    font-size: 42px;
+    line-height: 128.95%;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 30px;
+  }
+  p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 156.19%;
+    margin-bottom: 30px;
+    color: #5e5e5e;
+    letter-spacing: 0.03em;
+  }
+`;
+
+const RightImage = styled.div`
+  background-position: center center;
+  width: 100%;
+  height: 50vh;
+  max-height: 800px;
+  min-height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(${teacher});
+  margin: 20px;
+  @media (min-width: 900px) {
+    width: 100%;
+    height: 50vh;
+    margin: 20px;
+    max-height: 800px;
+    min-height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-image: url(${teacher});
+    border-radius: 5%;
+  }
+`;
 const RowSpacer = styled.div`
   width: 100%;
   padding: 80px 0;
@@ -72,14 +131,17 @@ const RowSpacer = styled.div`
 const Landing = () => {
   return (
     <Layout>
+      <Header />
       <Content>
-        <Header />
-        <RowSpacer />
-        <Left>left image</Left>
-        <Right>Right image</Right>
-        <RowSpacer />
-        <TimelineRow />
+        <Left>
+          <HeaderText>Find your pefect tutor</HeaderText>
+        </Left>
+        <Right>
+          <RightImage />
+        </Right>
       </Content>
+      <RowSpacer />
+      <TimelineRow />
     </Layout>
   );
 };
