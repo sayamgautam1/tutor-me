@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { breakpoints } from "../Media";
-
+import Button from "../button/Button";
 import Container from "../container/Container";
 
 export const Float = keyframes`
@@ -45,6 +45,12 @@ const HeadingMain = styled.h1`
     animation-delay: 0.4s;
   }
 `;
+
+const ButtonContainer = styled.div`
+  display: inline-block;
+  align-self: center;
+  padding-top: 50px;
+`;
 function Header() {
   return (
     <Container>
@@ -53,6 +59,10 @@ function Header() {
           tutor<span className="blue">Me</span>
         </span>
       </HeadingMain>
+      <ButtonContainer>
+        <Button>Log In</Button>
+        <Button>Sign up</Button>
+      </ButtonContainer>
     </Container>
   );
 }
