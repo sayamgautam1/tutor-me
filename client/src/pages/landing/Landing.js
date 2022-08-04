@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import Header from "../../components/header/Header";
 import { breakpoints } from "../../components/Media";
+import TimelineRow from "./TimelineRow";
 
 const FadeOut = keyframes`
   0%{
@@ -34,7 +35,7 @@ const Layout = styled.div`
 
 const Content = styled.div`
   max-width: 2000px;
-  height: 100%;
+  min-height: 100%;
   margin: 0 auto;
   background-color: #fff0f1;
   display: flex;
@@ -64,14 +65,20 @@ const Right = styled.div`
     flex-wrap: wrap;
   }
 `;
-
+const RowSpacer = styled.div`
+  width: 100%;
+  padding: 80px 0;
+`;
 const Landing = () => {
   return (
     <Layout>
       <Content>
         <Header />
+        <RowSpacer />
         <Left>left image</Left>
         <Right>Right image</Right>
+        <RowSpacer />
+        <TimelineRow />
       </Content>
     </Layout>
   );

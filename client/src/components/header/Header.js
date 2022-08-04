@@ -19,7 +19,7 @@ const HeadingMain = styled.h1`
   line-height: 129.69%;
   letter-spacing: 0.03em;
   margin-bottom: 0;
-  margin-left: 0px;
+  margin-left: 5px;
   color: #ff6362;
   @media (min-width: ${breakpoints.mobileMax}) {
     font-size: 60px;
@@ -50,7 +50,7 @@ function Header() {
     <Container>
       <HeadingMain>
         <span>
-          TuTor<span className="blue">Me</span>
+          tutor<span className="blue">Me</span>
         </span>
       </HeadingMain>
     </Container>
