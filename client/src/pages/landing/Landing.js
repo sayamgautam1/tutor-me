@@ -2,8 +2,9 @@ import styled, { keyframes } from "styled-components";
 import Header from "../../components/header/Header";
 import { breakpoints } from "../../components/Media";
 import TimelineRow from "./TimelineRow";
-import studnet from "./studnet.jpeg";
 import teacher from "./teacher.jpeg";
+import Heading from "../../components/Heading";
+import Paragraph from "../../components/Paragraph";
 
 const FadeOut = keyframes`
   0%{
@@ -82,23 +83,6 @@ const HeaderText = styled.div`
     padding: 0 20%;
     background-position: center center;
   }
-  h1 {
-    font-family: "Lato", sans-serif;
-    font-size: 42px;
-    line-height: 128.95%;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    margin-bottom: 30px;
-  }
-  p {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 156.19%;
-    margin-bottom: 30px;
-    color: #5e5e5e;
-    letter-spacing: 0.03em;
-  }
 `;
 
 const RightImage = styled.div`
@@ -122,11 +106,12 @@ const RightImage = styled.div`
     background-position: center right;
     background-image: url(${teacher});
     border-radius: 5%;
+    box-shadow: 5px 10px #ffdfde;
   }
 `;
 const RowSpacer = styled.div`
   width: 100%;
-  padding: 80px 0;
+  padding: 40px 0;
 `;
 const Landing = () => {
   return (
@@ -134,7 +119,10 @@ const Landing = () => {
       <Header />
       <Content>
         <Left>
-          <HeaderText>Find your pefect tutor</HeaderText>
+          <HeaderText>
+            <Heading>Find your perfect Tutor</Heading>
+            <Paragraph>Learning has never been this easy</Paragraph>
+          </HeaderText>
         </Left>
         <Right>
           <RightImage />
@@ -142,6 +130,7 @@ const Landing = () => {
       </Content>
       <RowSpacer />
       <TimelineRow />
+      <RowSpacer />
     </Layout>
   );
 };
