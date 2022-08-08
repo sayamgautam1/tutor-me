@@ -9,9 +9,7 @@ import { breakpoints } from "../Media";
 import Button from "../button/Button";
 import { FaSearch, FaBriefcase, FaQuestionCircle } from "react-icons/fa";
 import Nav from "react-bootstrap/Nav";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Profile from "../../pages/Profile";
-
+// import Login from "../../pages/Login";
 const HamburgerContainer = styled.div`
   position: fixed;
   right: 0px;
@@ -121,24 +119,50 @@ const SearchBox = styled.div`
 `;
 const Hamburger = () => {
   const [toggle, setToggle] = useState(true);
+  const [logInVisible, setLoginVisible] = useState(false);
+  const [signUpVisible, setSignUpVisible] = useState(false);
+  // render login and signup btn
+  // render login
+  // render signup
+  // render profile and dashboard
+  function login() {
+    return (
+      <div>
+        <h2>Login</h2>
+      </div>
+    );
+  }
+
+  function signUp() {
+    return (
+      <div>
+        <h2>SignUp</h2>
+      </div>
+    );
+  }
   return (
     <HamburgerContainer on={toggle}>
       <HamburgerImg on={toggle} onClick={() => setToggle(!toggle)} />
 
       <NavContainer on={toggle}>
         <Links on={toggle}>
-          <Button>Log In</Button>
+          <Button onClick={() => setLoginVisible(!logInVisible)}>Log In</Button>
 
-          <Button className="white">Sign up</Button>
+          <Button onClick={() => setSignUpVisible(!signUpVisible)}>
+            Sign up
+          </Button>
         </Links>
+
         <Nav.Link as={Link} to="/profile">
           Profile
         </Nav.Link>
-        {/* <Routes>
-          <Route path="/profile" element={<Profile />}>
-            Profile
-          </Route> */}
-        {/* </Routes> */}
+
+        {/* 👇️ show elements on click */}
+        {logInVisible && <div>{login()}</div>}
+
+        {/* 👇️ show component on click */}
+        {signUpVisible && <div>{signUp()}</div>}
+
         <SearchBox on={toggle}>
           <FaSearch /> <br />
           Search a <span className="blue">Tutor</span>
