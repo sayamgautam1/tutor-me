@@ -1,14 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import hamburger from './hamburger.svg'
-import hamburgerHover from './hamburgerHover.svg'
-import close from './close.svg'
-import { useState } from 'react'
-import { breakpoints } from '../Media'
-import Button from '../button/Button'
-import { FaSearch, FaBriefcase, FaQuestionCircle } from 'react-icons/fa'
-import Nav from 'react-bootstrap/Nav'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import hamburger from "./hamburger.svg";
+import hamburgerHover from "./hamburgerHover.svg";
+import close from "./close.svg";
+import { useState } from "react";
+import { breakpoints } from "../Media";
+import Button from "../button/Button";
+import { FaSearch, FaBriefcase, FaQuestionCircle } from "react-icons/fa";
+import Nav from "react-bootstrap/Nav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Profile from "../../pages/Profile";
 
 const HamburgerContainer = styled.div`
   position: fixed;
@@ -22,7 +24,7 @@ const HamburgerContainer = styled.div`
     top: 20px;
     width: unset;
   } ;
-`
+`;
 const HamburgerImg = styled.div`
   z-index: 99999;
   display: block;
@@ -57,7 +59,7 @@ const HamburgerImg = styled.div`
     background-image: ${(props) =>
       props.on ? `url(${hamburgerHover})` : `url(${close})`};
   }
-`
+`;
 
 const NavContainer = styled.div`
   height: 100%;
@@ -65,13 +67,13 @@ const NavContainer = styled.div`
   width: 100%;
   padding-left: 30px;
   background-color: white;
-  position: ${(props) => (props.on ? 'fixed' : 'absolute')};
+  position: ${(props) => (props.on ? "fixed" : "absolute")};
   display: block;
   right: 0;
   top: 0;
   opacity: 0;
   animation: ${(props) =>
-    props.on ? 'SlideOutRight .7s forwards' : 'SlideFromLeft .5s forwards'};
+    props.on ? "SlideOutRight .7s forwards" : "SlideFromLeft .5s forwards"};
   @media (min-width: ${breakpoints.mobileMax}) {
     width: 500px;
     right: 0;
@@ -98,27 +100,27 @@ const NavContainer = styled.div`
       opacity: 0;
     }
   }
-`
+`;
 const Links = styled.div`
   margin-top: 100px;
   width: 100%;
   height: 20%;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const SearchBox = styled.div`
   font-size: 2em;
   line-height: 2em;
   height: 35%;
   letter-spacing: 0.03em;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   .blue {
     color: #ff6362;
   }
-`
+`;
 const Hamburger = () => {
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(true);
   return (
     <HamburgerContainer on={toggle}>
       <HamburgerImg on={toggle} onClick={() => setToggle(!toggle)} />
@@ -132,6 +134,11 @@ const Hamburger = () => {
         <Nav.Link as={Link} to="/profile">
           Profile
         </Nav.Link>
+        {/* <Routes>
+          <Route path="/profile" element={<Profile />}>
+            Profile
+          </Route> */}
+        {/* </Routes> */}
         <SearchBox on={toggle}>
           <FaSearch /> <br />
           Search a <span className="blue">Tutor</span>
@@ -143,7 +150,7 @@ const Hamburger = () => {
         </SearchBox>
       </NavContainer>
     </HamburgerContainer>
-  )
-}
+  );
+};
 
-export default Hamburger
+export default Hamburger;
