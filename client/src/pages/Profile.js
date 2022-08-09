@@ -3,6 +3,19 @@ import React from 'react'
 import { QUERY_ME } from '../utils/queries'
 import Header from '../components/header/Header'
 import Hamburger from '../components/hamburger/Hamburger'
+import {
+  Wrapper,
+  Card,
+  Head,
+  Avatar,
+  Title,
+  Name,
+  Age,
+  City,
+  Stats,
+  StatFigure,
+  StatTitle,
+} from './style'
 
 const Profile = () => {
   //   const { loading, data } = useQuery(QUERY_ME);
@@ -23,6 +36,38 @@ const Profile = () => {
       Username: {profileData.username} */}
       <Header />
       <Hamburger />
+
+      <Wrapper>
+        <Card>
+          <Head>
+            {/* <Avatar src={ProfilePicture} alt="" /> */}
+
+            <Title>
+              <Name>Victor Crest</Name>
+              <Age>26</Age>
+            </Title>
+
+            <City>London</City>
+          </Head>
+
+          <section>
+            <Stats>
+              <li>
+                <StatFigure>80K</StatFigure>
+                <StatTitle>Followers</StatTitle>
+              </li>
+              <li>
+                <StatFigure>803K</StatFigure>
+                <StatTitle>Likes</StatTitle>
+              </li>
+              <li>
+                <StatFigure>1.4K</StatFigure>
+                <StatTitle>Photos</StatTitle>
+              </li>
+            </Stats>
+          </section>
+        </Card>
+      </Wrapper>
     </>
   )
 }
