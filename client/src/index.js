@@ -11,7 +11,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile/Profile";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

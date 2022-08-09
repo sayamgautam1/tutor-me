@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import { colors, radius, space, fontWeights } from '../../src/shared/variable'
-import bgTop from '../../src/shared/images/bg-pattern-top.svg'
-import bgBottom from '../../src/shared/images/bg-pattern-bottom.svg'
-import CardDesign from '../../src/shared/images/bg-pattern-card.svg'
+import styled from "styled-components";
+import { colors, radius, space, fontWeights } from "../../shared/variable";
+import bgTop from "../../../src/shared/images/bg-pattern-top.svg";
+import bgBottom from "../../../src/shared/images/bg-pattern-bottom.svg";
+import CardDesign from "../../../src/shared/images/bg-pattern-card.svg";
 
 export const Wrapper = styled.main`
   position: relative;
@@ -16,7 +16,7 @@ export const Wrapper = styled.main`
   overflow: hidden;
   ::before,
   ::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -34,7 +34,7 @@ export const Wrapper = styled.main`
     left: 100%;
     background: url(${bgBottom}) no-repeat top left;
   }
-`
+`;
 
 export const Card = styled.article`
   flex-grow: 1;
@@ -44,7 +44,7 @@ export const Card = styled.article`
   border-radius: ${radius};
   box-shadow: 0 4rem 4rem -2rem rgba(0, 0, 0, 0.2);
   margin: 0 ${space.large};
-`
+`;
 
 export const Head = styled.head`
   display: flex;
@@ -54,7 +54,7 @@ export const Head = styled.head`
   padding-top: 8.75rem;
   color: ${colors.BrandTertiary};
   ::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -67,7 +67,7 @@ export const Head = styled.head`
     border-top-left-radius: ${radius};
     border-top-right-radius: ${radius};
   }
-`
+`;
 
 export const Avatar = styled.img`
   border-radius: 50%;
@@ -75,11 +75,11 @@ export const Avatar = styled.img`
   border: 5px solid white;
   z-index: 1;
   margin-bottom: ${space.large};
-`
+`;
 
 export const Title = styled.div`
   margin-bottom: ${space.small};
-`
+`;
 
 export const Name = styled.h2`
   display: inline-block;
@@ -87,18 +87,18 @@ export const Name = styled.h2`
   font-weight: ${fontWeights.Bold};
   color: ${colors.BrandSecondary};
   margin-right: ${space.small};
-`
+`;
 
 export const Age = styled.p`
   display: inline-block;
   font-size: 1.125rem;
   font-weight: ${fontWeights.Normal};
-`
+`;
 
 export const City = styled.p`
   font-size: 0.875rem;
   margin-bottom: ${space.large};
-`
+`;
 
 export const Stats = styled.ul`
   position: relative;
@@ -108,13 +108,13 @@ export const Stats = styled.ul`
   li {
     list-style: none;
     ::before {
-      content: '\\200B';
+      content: "\\200B";
       height: 0;
       display: block;
     }
   }
   ::before {
-    content: '';
+    content: "";
     background: ${colors.Neutral};
     width: 100%;
     height: 1px;
@@ -123,16 +123,16 @@ export const Stats = styled.ul`
     left: 0;
     opacity: 0.3;
   }
-`
+`;
 
 export const StatFigure = styled.div`
   font-size: 1.125rem;
   font-weight: ${fontWeights.Bold};
   color: ${colors.BrandSecondary};
   margin-bottom: ${space.tiny};
-`
+`;
 
 export const StatTitle = styled.div`
   font-size: 0.75rem;
   letter-spacing: 1px;
-`
+`;

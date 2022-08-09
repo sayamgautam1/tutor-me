@@ -1,8 +1,8 @@
-import { useQuery } from '@apollo/client'
-import React from 'react'
-import { QUERY_ME } from '../utils/queries'
-import Header from '../components/header/Header'
-import Hamburger from '../components/hamburger/Hamburger'
+import { useQuery } from "@apollo/client";
+import React from "react";
+import { QUERY_ME } from "../../utils/queries";
+import Header from "../../components/header/Header";
+import Hamburger from "../../components/hamburger/Hamburger";
 import {
   Wrapper,
   Card,
@@ -15,7 +15,7 @@ import {
   Stats,
   StatFigure,
   StatTitle,
-} from './style'
+} from "./style";
 
 const Profile = () => {
   //   const { loading, data } = useQuery(QUERY_ME);
@@ -69,7 +69,7 @@ const Profile = () => {
         </Card>
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

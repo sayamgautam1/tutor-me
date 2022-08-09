@@ -111,7 +111,7 @@ const Links = styled.div`
 const SearchBox = styled.div`
   font-size: 2em;
   line-height: 2em;
-  height: 50%;
+  height: 35%;
   letter-spacing: 0.03em;
   font-family: "Lato", sans-serif;
   .blue {
@@ -155,7 +155,6 @@ const Hamburger = () => {
         ) : visibleComponent === "signup" ? (
           <div>
             <SearchBox>
-              {" "}
               <Signup stateChanger={setVisibleComponent} />
             </SearchBox>
           </div>
