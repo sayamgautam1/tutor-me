@@ -119,8 +119,8 @@ const SearchBox = styled.div`
 `;
 const Hamburger = () => {
   const [toggle, setToggle] = useState(true);
-  const [logInVisible, setLoginVisible] = useState(false);
-  const [signUpVisible, setSignUpVisible] = useState(false);
+
+  const [visibleComponent, setVisibleComponent] = useState("");
   // render login and signup btn
   // render login
   // render signup
@@ -146,11 +146,9 @@ const Hamburger = () => {
 
       <NavContainer on={toggle}>
         <Links on={toggle}>
-          <Button onClick={() => setLoginVisible(!logInVisible)}>Log In</Button>
+          <Button onClick={() => setVisibleComponent("login")}>Log In</Button>
 
-          <Button onClick={() => setSignUpVisible(!signUpVisible)}>
-            Sign up
-          </Button>
+          <Button onClick={() => setVisibleComponent("signup")}>Sign up</Button>
         </Links>
 
         <Nav.Link as={Link} to="/profile">
@@ -158,10 +156,13 @@ const Hamburger = () => {
         </Nav.Link>
 
         {/* 👇️ show elements on click */}
-        {logInVisible && <div>{login()}</div>}
-
-        {/* 👇️ show component on click */}
-        {signUpVisible && <div>{signUp()}</div>}
+        {visibleComponent === "login" ? (
+          <div>{login()}</div>
+        ) : visibleComponent === "signup" ? (
+          <div>{signUp()}</div>
+        ) : (
+          ""
+        )}
 
         <SearchBox on={toggle}>
           <FaSearch /> <br />
