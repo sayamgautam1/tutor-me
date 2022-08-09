@@ -12,6 +12,7 @@ import Nav from "react-bootstrap/Nav";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import Auth from "../../utils/auth";
+
 const HamburgerContainer = styled.div`
   position: fixed;
   right: 0px;
@@ -101,6 +102,67 @@ const NavContainer = styled.div`
     }
   }
 `;
+const LoggedInLinks = styled.div`
+  margin-top: 100px;
+  width: auto;
+  & > a {
+    display: block;
+    color: #b4e0e8;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 45px;
+    margin: 31px 0 0 81px;
+    line-height: 91.45%;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: ${(props) => (props.on ? "none" : "SlideInText .7s forwards")};
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+    @keyframes SlideInText {
+      0% {
+        transform: translate(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+    &::after {
+      width: 0px;
+      left: -10px;
+      content: "";
+      display: inline-block;
+      height: 20px;
+      position: absolute;
+      bottom: 0px;
+      z-index: -2;
+      background-color: #ff6362;
+      transition: width 0.4s;
+    }
+    &:hover::after {
+      width: 160px;
+    }
+    &:nth-child(2):hover::after {
+      width: 170px;
+    }
+    &:nth-child(3):hover::after {
+      width: 155px;
+    }
+    &:nth-child(4):hover::after {
+      width: 205px;
+    }
+  }
+`;
+
 const Links = styled.div`
   margin-top: 100px;
   width: 100%;
@@ -108,7 +170,6 @@ const Links = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 const SearchBox = styled.div`
   font-size: 2em;
   line-height: 2em;
@@ -117,6 +178,18 @@ const SearchBox = styled.div`
   font-family: "Lato", sans-serif;
   .blue {
     color: #ff6362;
+  }
+  .button {
+    background-color: #ff6362;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    padding: 7px;
+    width: 100%;
+    border-radius: 25px;
+    line-height: 156.19%;
+    margin-bottom: 50px;
   }
 `;
 const Hamburger = () => {
@@ -148,20 +221,48 @@ const Hamburger = () => {
           </div>
         ) : Auth.loggedIn() ? (
           <>
-            <Nav.Link as={Link} to="/profile">
-              Profile
-            </Nav.Link>
-            <SearchBox>
-              <Button onClick={(e) => logout(e)}>Logout</Button>
-            </SearchBox>
+            <LoggedInLinks>
+              <Nav.Link as={Link} to="/profile">
+                Profile
+              </Nav.Link>
+            </LoggedInLinks>
+            <LoggedInLinks>
+              <Nav.Link as={Link} to="/discover">
+                Discover
+              </Nav.Link>
+            </LoggedInLinks>
+            <LoggedInLinks>
+              <SearchBox>
+                <button
+                  className="button"
+                  style={{ cursor: "pointer" }}
+                  onClick={(e) => logout(e)}
+                >
+                  Logout
+                </button>
+              </SearchBox>
+            </LoggedInLinks>
           </>
         ) : (
           <Links on={toggle}>
-            <Button onClick={() => setVisibleComponent("login")}>Log In</Button>
+            <SearchBox>
+              <button
+                className="button"
+                style={{ cursor: "pointer" }}
+                onClick={() => setVisibleComponent("login")}
+              >
+                Log In
+              </button>
+            </SearchBox>
 
-            <Button onClick={() => setVisibleComponent("signup")}>
+            <Button
+              className="button"
+              style={{ cursor: "pointer" }}
+              onClick={() => setVisibleComponent("signup")}
+            >
               Sign up
             </Button>
+
             <SearchBox on={toggle}>
               <FaSearch /> <br />
               Search a <span className="blue">Tutor</span>
@@ -173,7 +274,6 @@ const Hamburger = () => {
             </SearchBox>
           </Links>
         )}
-        ///
       </NavContainer>
     </HamburgerContainer>
   );

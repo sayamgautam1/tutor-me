@@ -42,6 +42,7 @@ const Styles = styled.div`
    padding: 10px;
    width: 100%;
    margin-bottom: 5px;
+   height:50px;
  }
 
  label {
@@ -71,12 +72,16 @@ const Styles = styled.div`
  }
 
  .submitButton {
-   background-color: #6976d9;
-   color: white;
-   font-family: sans-serif;
-   font-size: 14px;
-   margin: 5px 0px;
-   padding: 10px;
+  background-color: #ff6362;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  line-height: 156.19%;
+  margin-bottom: 5px;
 `;
 
 const Signup = (props) => {
