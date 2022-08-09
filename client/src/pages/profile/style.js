@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { colors, radius, space, fontWeights } from "../../shared/variable";
 import bgTop from "../../../src/shared/images/bg-pattern-top.svg";
 import bgBottom from "../../../src/shared/images/bg-pattern-bottom.svg";
 import CardDesign from "../../../src/shared/images/bg-pattern-card.svg";
+import { breakpoints } from "../../components/Media";
 
 export const Wrapper = styled.main`
   position: relative;
@@ -46,7 +47,7 @@ export const Card = styled.article`
   margin: 0 ${space.large};
 `;
 
-export const Head = styled.head`
+export const Head = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,4 +136,67 @@ export const StatFigure = styled.div`
 export const StatTitle = styled.div`
   font-size: 0.75rem;
   letter-spacing: 1px;
+`;
+export const Left = styled.div`
+  flex: 100%;
+  @media (min-width: 900px) {
+    flex: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+
+export const Right = styled.div`
+  flex: 100%;
+  @media (min-width: 900px) {
+    flex: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+const FadeOut = keyframes`
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+`;
+export const Layout = styled.div`
+  height: 100vh;
+  padding: 20px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  @media (min-width: ${breakpoints.tabletMin}) {
+    max-width: 940px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  @media (min-width: ${breakpoints.desktopMin}) {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0px auto;
+  }
+`;
+
+export const Content = styled.div`
+  max-width: 2000px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff0f1;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  flex: 1;
+  position: relative;
+  border-radius: 5%;
 `;

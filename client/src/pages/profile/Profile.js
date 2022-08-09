@@ -15,16 +15,19 @@ import {
   Stats,
   StatFigure,
   StatTitle,
+  Left,
+  Right,
+  Layout,
 } from "./style";
 
 const Profile = () => {
-  //   const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME);
 
-  //   if (loading) {
-  //     return <>Loading...</>;
-  //   }
+  if (loading) {
+    return <>Loading...</>;
+  }
 
-  //   const profileData = data?.me || {};
+  const profileData = data?.me || {};
 
   return (
     <>
@@ -36,38 +39,42 @@ const Profile = () => {
       Username: {profileData.username} */}
       <Header />
       <Hamburger />
+      <Layout>
+        <Wrapper>
+          <Left>
+            <Card>
+              <Head>
+                {/* <Avatar src={ProfilePicture} alt="" /> */}
 
-      <Wrapper>
-        <Card>
-          <Head>
-            {/* <Avatar src={ProfilePicture} alt="" /> */}
+                <Title>
+                  <Name>{profileData.username}</Name>
+                  <Age>26</Age>
+                </Title>
 
-            <Title>
-              <Name>Victor Crest</Name>
-              <Age>26</Age>
-            </Title>
+                <City>London</City>
+              </Head>
 
-            <City>London</City>
-          </Head>
-
-          <section>
-            <Stats>
-              <li>
-                <StatFigure>80K</StatFigure>
-                <StatTitle>Followers</StatTitle>
-              </li>
-              <li>
-                <StatFigure>803K</StatFigure>
-                <StatTitle>Likes</StatTitle>
-              </li>
-              <li>
-                <StatFigure>1.4K</StatFigure>
-                <StatTitle>Photos</StatTitle>
-              </li>
-            </Stats>
-          </section>
-        </Card>
-      </Wrapper>
+              <section>
+                <Stats>
+                  <li>
+                    <StatFigure>80K</StatFigure>
+                    <StatTitle>Followers</StatTitle>
+                  </li>
+                  <li>
+                    <StatFigure>803K</StatFigure>
+                    <StatTitle>Likes</StatTitle>
+                  </li>
+                  <li>
+                    <StatFigure>1.4K</StatFigure>
+                    <StatTitle>Photos</StatTitle>
+                  </li>
+                </Stats>
+              </section>
+            </Card>
+          </Left>
+          <Right>{"something"}</Right>
+        </Wrapper>
+      </Layout>
     </>
   );
 };
