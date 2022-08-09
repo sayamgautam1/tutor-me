@@ -9,7 +9,8 @@ import { breakpoints } from "../Media";
 import Button from "../button/Button";
 import { FaSearch, FaBriefcase, FaQuestionCircle } from "react-icons/fa";
 import Nav from "react-bootstrap/Nav";
-// import Login from "../../pages/Login";
+import Login from "../../pages/Login";
+import Signup from "../../pages/Signup";
 const HamburgerContainer = styled.div`
   position: fixed;
   right: 0px;
@@ -125,41 +126,38 @@ const Hamburger = () => {
   // render login
   // render signup
   // render profile and dashboard
-  function login() {
-    return (
-      <div>
-        <h2>Login</h2>
-      </div>
-    );
-  }
 
-  function signUp() {
-    return (
-      <div>
-        <h2>SignUp</h2>
-      </div>
-    );
-  }
   return (
     <HamburgerContainer on={toggle}>
       <HamburgerImg on={toggle} onClick={() => setToggle(!toggle)} />
 
       <NavContainer on={toggle}>
-        <Links on={toggle}>
-          <Button onClick={() => setVisibleComponent("login")}>Log In</Button>
+        {visibleComponent === "" ? (
+          <Links on={toggle}>
+            <Button onClick={() => setVisibleComponent("login")}>Log In</Button>
 
-          <Button onClick={() => setVisibleComponent("signup")}>Sign up</Button>
-        </Links>
+            <Button onClick={() => setVisibleComponent("signup")}>
+              Sign up
+            </Button>
+          </Links>
+        ) : // <Nav.Link as={Link} to="/profile">
+        //   Profile
+        // </Nav.Link>
 
-        <Nav.Link as={Link} to="/profile">
-          Profile
-        </Nav.Link>
-
-        {/* 👇️ show elements on click */}
-        {visibleComponent === "login" ? (
-          <div>{login()}</div>
+        visibleComponent === "login" ? (
+          <div>
+            <SearchBox>
+              {" "}
+              <Login />
+            </SearchBox>
+          </div>
         ) : visibleComponent === "signup" ? (
-          <div>{signUp()}</div>
+          <div>
+            <SearchBox>
+              {" "}
+              <Signup />
+            </SearchBox>
+          </div>
         ) : (
           ""
         )}
