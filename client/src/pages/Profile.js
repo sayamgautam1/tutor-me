@@ -1,6 +1,8 @@
-import { useQuery } from "@apollo/client";
-import React from "react";
-import { QUERY_ME } from "../utils/queries";
+import { useQuery } from '@apollo/client'
+import React from 'react'
+import { QUERY_ME } from '../utils/queries'
+import Header from '../components/header/Header'
+import Hamburger from '../components/hamburger/Hamburger'
 
 const Profile = () => {
   //   const { loading, data } = useQuery(QUERY_ME);
@@ -19,9 +21,10 @@ const Profile = () => {
       Email: {profileData.email}
       <br />
       Username: {profileData.username} */}
-      <h1>Hello</h1>
+      <Header />
+      <Hamburger />
     </>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
