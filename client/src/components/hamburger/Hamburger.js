@@ -11,6 +11,7 @@ import { FaSearch, FaBriefcase, FaQuestionCircle } from "react-icons/fa";
 import Nav from "react-bootstrap/Nav";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
+import Auth from "../../utils/auth";
 const HamburgerContainer = styled.div`
   position: fixed;
   right: 0px;
@@ -122,31 +123,18 @@ const Hamburger = () => {
   const [toggle, setToggle] = useState(true);
 
   const [visibleComponent, setVisibleComponent] = useState("");
-  // render login and signup btn
-  // render login
-  // render signup
-  // render profile and dashboard
 
-  // function to change visible components
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
     <HamburgerContainer on={toggle}>
       <HamburgerImg on={toggle} onClick={() => setToggle(!toggle)} />
 
       <NavContainer on={toggle}>
-        {visibleComponent === "" ? (
-          <Links on={toggle}>
-            <Button onClick={() => setVisibleComponent("login")}>Log In</Button>
-
-            <Button onClick={() => setVisibleComponent("signup")}>
-              Sign up
-            </Button>
-          </Links>
-        ) : // <Nav.Link as={Link} to="/profile">
-        //   Profile
-        // </Nav.Link>
-
-        visibleComponent === "login" ? (
+        {visibleComponent === "login" ? (
           <div>
             <SearchBox>
               <Login stateChanger={setVisibleComponent} />
@@ -158,19 +146,34 @@ const Hamburger = () => {
               <Signup stateChanger={setVisibleComponent} />
             </SearchBox>
           </div>
+        ) : Auth.loggedIn() ? (
+          <>
+            <Nav.Link as={Link} to="/profile">
+              Profile
+            </Nav.Link>
+            <SearchBox>
+              <Button onClick={(e) => logout(e)}>Logout</Button>
+            </SearchBox>
+          </>
         ) : (
-          ""
-        )}
+          <Links on={toggle}>
+            <Button onClick={() => setVisibleComponent("login")}>Log In</Button>
 
-        <SearchBox on={toggle}>
-          <FaSearch /> <br />
-          Search a <span className="blue">Tutor</span>
-          <br />
-          <FaBriefcase /> <br />
-          Become a <span className="blue">Tutor</span> <br />
-          <FaQuestionCircle /> <br />
-          Contact
-        </SearchBox>
+            <Button onClick={() => setVisibleComponent("signup")}>
+              Sign up
+            </Button>
+            <SearchBox on={toggle}>
+              <FaSearch /> <br />
+              Search a <span className="blue">Tutor</span>
+              <br />
+              <FaBriefcase /> <br />
+              Become a <span className="blue">Tutor</span> <br />
+              <FaQuestionCircle /> <br />
+              Contact
+            </SearchBox>
+          </Links>
+        )}
+        ///
       </NavContainer>
     </HamburgerContainer>
   );
