@@ -111,7 +111,7 @@ const Links = styled.div`
 const SearchBox = styled.div`
   font-size: 2em;
   line-height: 2em;
-  height: 35%;
+  height: 50%;
   letter-spacing: 0.03em;
   font-family: "Lato", sans-serif;
   .blue {
@@ -126,6 +126,8 @@ const Hamburger = () => {
   // render login
   // render signup
   // render profile and dashboard
+
+  // function to change visible components
 
   return (
     <HamburgerContainer on={toggle}>
@@ -147,15 +149,14 @@ const Hamburger = () => {
         visibleComponent === "login" ? (
           <div>
             <SearchBox>
-              {" "}
-              <Login />
+              <Login stateChanger={setVisibleComponent} />
             </SearchBox>
           </div>
         ) : visibleComponent === "signup" ? (
           <div>
             <SearchBox>
               {" "}
-              <Signup />
+              <Signup stateChanger={setVisibleComponent} />
             </SearchBox>
           </div>
         ) : (
