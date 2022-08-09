@@ -5,7 +5,6 @@ import { LOGIN_USER } from "../utils/mutations";
 import styled from "styled-components";
 
 import Auth from "../utils/auth";
-import Container from "../components/container/Container";
 
 /// style components for form
 const Styles = styled.div`
