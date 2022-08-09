@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
-import React from "react";
-import { QUERY_ME } from "../../utils/queries";
-import Header from "../../components/header/Header";
-import Hamburger from "../../components/hamburger/Hamburger";
+import { useQuery } from '@apollo/client'
+import React from 'react'
+import { QUERY_ME } from '../../utils/queries'
+import Header from '../../components/header/Header'
+import Hamburger from '../../components/hamburger/Hamburger'
 import {
   Wrapper,
   Card,
@@ -18,16 +18,16 @@ import {
   Left,
   Right,
   Layout,
-} from "./style";
+} from './style'
 
 const Profile = () => {
-  const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME)
 
   if (loading) {
-    return <>Loading...</>;
+    return <>Loading...</>
   }
 
-  const profileData = data?.me || {};
+  const profileData = data?.me || {}
 
   return (
     <>
@@ -72,11 +72,17 @@ const Profile = () => {
               </section>
             </Card>
           </Left>
-          <Right>{"something"}</Right>
+          <Right>
+            {'Currently Learning '}
+            <br></br>
+            {'Currently Teaching'}
+            {/* {profileData.learning}
+            {profileData.teaching} */}
+          </Right>
         </Wrapper>
       </Layout>
     </>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
