@@ -23,6 +23,6 @@ const skillSchema = new Schema({
   ],
 })
 
-const Skill = model('skill', skillSchema)
+const Skill = model('Skill', skillSchema)
 
 module.exports = Skill
