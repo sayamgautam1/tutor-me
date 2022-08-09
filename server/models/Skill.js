@@ -7,11 +7,11 @@ const skillSchema = new Schema({
     unique: true,
     trim: true,
   },
-  skillLength: {
+  classLength: {
     type: Number,
     required: true,
   },
-  professor: {
+  teacher: {
     type: Schema.Types.ObjectId,
     ref: 'User',
   },

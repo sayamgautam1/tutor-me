@@ -1,0 +1,26 @@
+[{
+    "name":"Japanese Cooking",
+    "classLength":"30",
+    "teacher":"drew",
+    "students":"portia"
+
+
+},{
+    "name":"German Dancing",
+    "classLength":"30",
+    "teacher":"dory",
+    "students":"drew"
+},{
+    "name":"English 101",
+    "classLength":"30",
+    "teacher":"portia",
+    "students":"elliot"
+
+
+},{
+    "name":"Rhino Riding",
+    "classLength":"3",
+    "teacher":"elliot",
+    "students":["drew", "portia", "dory"]
+}
+]

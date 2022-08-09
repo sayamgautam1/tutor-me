@@ -2,21 +2,29 @@
   {
     "username": "elliot",
     "email": "elliot@email.com",
-    "password": "password01"
+    "password": "password01",
+    "teachSkill":"Rhino Riding",
+    "learnSkill":["English 101"]
   },
   {
     "username": "dory",
     "email": "dory@email.com",
-    "password": "password01"
+    "password": "password01",
+    "teachSkill":"German Dancing",
+    "learnSkill":["Rhino Riding"]
   },
   {
     "username": "drew",
     "email": "drew@email.com",
-    "password": "password01"
+    "password": "password01",
+    "teachSkill":"Japanese Cooking",
+    "learnSkill":["Rhino Riding", "German Dancing"]
   },
   {
     "username": "portia",
     "email": "portia@email.com",
-    "password": "password01"
+    "password": "password01",
+    "teachSkill":"English 101",
+    "learnSkill":["Rhino Riding", "Japanese Cooking"]
   }
 ]
