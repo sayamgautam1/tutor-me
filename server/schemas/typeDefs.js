@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     name: String
     age: Int
+    city: String
     teachSkill: [Skill]
     learnSkill: [Skill]
   }
