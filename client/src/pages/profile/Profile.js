@@ -47,11 +47,14 @@ const Profile = () => {
                 {/* <Avatar src={ProfilePicture} alt="" /> */}
 
                 <Title>
-                  <Name>{profileData.username}</Name>
-                  <Age>26</Age>
+                  <Name>Welcome, {profileData.username} !</Name>
+                  <br></br>
+                  <Age>Age: 26</Age>
+                  <br></br>
+                  <Name>{profileData.email}</Name>
                 </Title>
 
-                <City>London</City>
+                <City>City: London</City>
               </Head>
 
               <section>
@@ -73,9 +76,15 @@ const Profile = () => {
             </Card>
           </Left>
           <Right>
-            {'Currently Learning '}
+            <Card>
+              <Name>{'Currently Learning'}</Name>
+              {/* {const myList = myArray.map((item)=> <Age>{item}</Age>)} */}
+            </Card>
             <br></br>
-            {'Currently Teaching'}
+            <Card>
+              <Name>{'Currently Teaching'}</Name>
+              {/* {const myList = myArray.map((item)=> <Age>{item}</Age>)} */}
+            </Card>
             {/* {profileData.learning}
             {profileData.teaching} */}
           </Right>
