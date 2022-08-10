@@ -2,19 +2,19 @@
     "name":"Japanese Cooking",
     "classLength":"30",
     "teacher":"drew",
-    "students":"portia"
+    "students":["portia"]
 
 
 },{
     "name":"German Dancing",
     "classLength":"30",
     "teacher":"dory",
-    "students":"drew"
+    "students":["drew"]
 },{
-    "name":"English 101",
+    "name":"English",
     "classLength":"30",
     "teacher":"portia",
-    "students":"elliot"
+    "students":["elliot"]
 
 
 },{

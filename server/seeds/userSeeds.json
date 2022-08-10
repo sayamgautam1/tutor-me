@@ -3,28 +3,36 @@
     "username": "elliot",
     "email": "elliot@email.com",
     "password": "password01",
-    "teachSkill":"Rhino Riding",
-    "learnSkill":["English 101"]
+    "age": "33",
+    "city": "Adelaide",
+    "teachSkill":["Rhino Riding"],
+    "learnSkill":["English"]
   },
   {
     "username": "dory",
     "email": "dory@email.com",
-    "password": "password01",
-    "teachSkill":"German Dancing",
+    "password": "password01",  
+    "age": "39",
+    "city": "Melbourne",
+    "teachSkill":["German Dancing"],
     "learnSkill":["Rhino Riding"]
   },
   {
     "username": "drew",
     "email": "drew@email.com",
     "password": "password01",
-    "teachSkill":"Japanese Cooking",
+    "age": "13",
+    "city": "Sydney",
+    "teachSkill":["Japanese Cooking"],
     "learnSkill":["Rhino Riding", "German Dancing"]
   },
   {
     "username": "portia",
     "email": "portia@email.com",
     "password": "password01",
-    "teachSkill":"English 101",
+    "age": "23",
+    "city": "Brisbane",
+    "teachSkill":["English 101"],
     "learnSkill":["Rhino Riding", "Japanese Cooking"]
   }
 ]

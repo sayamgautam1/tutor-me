@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, Types } = require('mongoose')
 const bcrypt = require('bcrypt')
 
 const userSchema = new Schema({
@@ -19,15 +19,26 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  age: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  city: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+
   teachSkill: [
     {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: 'Skill',
     },
   ],
   learnSkill: [
     {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: 'Skill',
     },
   ], /// pernsonal details ,, array of courses. array of courses they can teach
