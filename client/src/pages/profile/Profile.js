@@ -1,8 +1,8 @@
-import { useQuery } from '@apollo/client'
-import React from 'react'
-import { QUERY_ME } from '../../utils/queries'
-import Header from '../../components/header/Header'
-import Hamburger from '../../components/hamburger/Hamburger'
+import { useQuery } from "@apollo/client";
+import React from "react";
+import { QUERY_ME } from "../../utils/queries";
+import Header from "../../components/header/Header";
+import Hamburger from "../../components/hamburger/Hamburger";
 import {
   Wrapper,
   Card,
@@ -18,16 +18,16 @@ import {
   Left,
   Right,
   Layout,
-} from './style'
+} from "./style";
 
 const Profile = () => {
-  const { loading, data } = useQuery(QUERY_ME)
+  const { loading, data } = useQuery(QUERY_ME);
 
   if (loading) {
-    return <>Loading...</>
+    return <>Loading...</>;
   }
 
-  const profileData = data?.me || {}
+  const profileData = data?.me || {};
 
   return (
     <>
@@ -45,9 +45,10 @@ const Profile = () => {
             <Card>
               <Head>
                 {/* <Avatar src={ProfilePicture} alt="" /> */}
+                {console.log(profileData)}
 
                 <Title>
-                  <Name>Welcome, {profileData.username} !</Name>
+                  <Name>Welcome, {profileData.name} !</Name>
                   <br></br>
                   <Age>Age: {profileData.age}</Age>
                   <br></br>
@@ -77,12 +78,16 @@ const Profile = () => {
           </Left>
           <Right>
             <Card>
-              <Name>{'Currently Learning'}</Name>
-              {/* {const myList = myArray.map((item)=> <Age>{item}</Age>)} */}
+              <Name>
+                {"Currently Learning"}
+                {profileData.learnSkill.map((skill) => (
+                  <li key={skill.index}>{skill.name}</li>
+                ))}
+              </Name>
             </Card>
             <br></br>
             <Card>
-              <Name>{'Currently Teaching'}</Name>
+              <Name>{"Currently Teaching"}</Name>
               {/* {const myList = myArray.map((item)=> <Age>{item}</Age>)} */}
             </Card>
             {/* {profileData.learning}
@@ -91,7 +96,7 @@ const Profile = () => {
         </Wrapper>
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
