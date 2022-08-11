@@ -41,7 +41,7 @@ connection.once('open', async () => {
   const users = []
   const skills = []
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 20; i++) {
     skills.push({
       name: getRandomSkill(),
       teacher: getRandomName(),
@@ -50,7 +50,7 @@ connection.once('open', async () => {
   }
   await Skill.collection.insertMany(skills)
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 20; i++) {
     const username = getRandomName()
     const age = getRandomAge()
     const password = getRandomPassword()

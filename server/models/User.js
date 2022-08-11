@@ -5,9 +5,15 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: false,
+    unique: true,
     trim: true,
   },
+  // name:{
+  //    type: String,
+  //   required: true,
+  //   unique: false,
+  //   trim: true,
+  // },
   email: {
     type: String,
     required: true,
@@ -18,16 +24,16 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  age: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  location: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  // age: {
+  //   type: String,
+  //   required: true,
+  //   trim: true,
+  // },
+  // location: {
+  //   type: String,
+  //   required: true,
+  //   trim: true,
+  // },
   teachSkill: [
     {
       type: Schema.Types.ObjectId,
