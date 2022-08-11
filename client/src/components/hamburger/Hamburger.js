@@ -227,8 +227,8 @@ const Hamburger = () => {
               </Nav.Link>
             </LoggedInLinks>
             <LoggedInLinks>
-              <Nav.Link as={Link} to="/discover">
-                Discover
+              <Nav.Link as={Link} to="/dashboard">
+                Dashboard
               </Nav.Link>
             </LoggedInLinks>
             <LoggedInLinks>
