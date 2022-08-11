@@ -108,6 +108,7 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
+      window.location = "/profile";
     } catch (e) {
       console.error(e);
     }
@@ -122,9 +123,7 @@ const Login = (props) => {
   return (
     <Styles>
       {data ? (
-        <p>
-          Success! You may now head <Link to="/">back to the homepage.</Link>
-        </p>
+        ""
       ) : (
         <>
           <h1 className="heading">Login</h1>

@@ -1,0 +1,30 @@
+import { Layout, Content, BoxContainer, BoxText, BoxTitle } from "./style";
+import Header from "../../components/header/Header";
+import Hamburger from "../../components/hamburger/Hamburger";
+
+const Dashboard = () => {
+  return (
+    <Layout>
+      <Header />
+      <Hamburger />
+
+      <Content>
+        <BoxContainer>
+          <BoxTitle>Hello</BoxTitle>
+          <BoxText>
+            A paragraph is a series of sentences that are organized and
+            coherent, and are all related to a single topic. Almost every piece
+            of writing you do that is longer than a few sentences should be
+            organized into paragraph
+          </BoxText>
+        </BoxContainer>
+        <BoxContainer>
+          <BoxTitle>Hello</BoxTitle>
+          <BoxText>Hello text</BoxText>
+        </BoxContainer>
+      </Content>
+    </Layout>
+  );
+};
+
+export default Dashboard;
