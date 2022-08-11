@@ -14,7 +14,7 @@ const resolvers = {
       if (context.user) {
         return User.findOne({
           email: context.user.email,
-        });
+        }).populate("learnSkill");
       }
       throw new AuthenticationError("You must be signed in");
     },
