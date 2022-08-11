@@ -49,7 +49,7 @@ const Profile = () => {
                 <Title>
                   <Name>Welcome, {profileData.username} !</Name>
                   <br></br>
-                  <Age>Age: 26</Age>
+                  <Age>Age: {profileData.age}</Age>
                   <br></br>
                   <Name>{profileData.email}</Name>
                 </Title>

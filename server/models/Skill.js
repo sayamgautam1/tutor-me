@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const skillSchema = new Schema({
   name: {
@@ -9,11 +9,10 @@ const skillSchema = new Schema({
   },
   classLength: {
     type: Number,
-    required: true,
+    required: false,
   },
   teacher: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
+    type: String,
   },
   students: [
     {

@@ -5,13 +5,12 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     trim: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true,
     match: [/.+@.+\..+/, 'Must match an email address!'],
   },
   password: {
@@ -24,21 +23,20 @@ const userSchema = new Schema({
     required: true,
     trim: true,
   },
-  city: {
+  location: {
     type: String,
     required: true,
     trim: true,
   },
-
   teachSkill: [
     {
-      type: String,
+      type: Schema.Types.ObjectId,
       ref: 'Skill',
     },
   ],
   learnSkill: [
     {
-      type: String,
+      type: Schema.Types.ObjectId,
       ref: 'Skill',
     },
   ], /// pernsonal details ,, array of courses. array of courses they can teach
