@@ -73,6 +73,36 @@ const resolvers = {
       }
       throw new AuthenticationError("Not logged in");
     },
+    addTeachSkill: async (parent, { teachSkill }, context) => {
+      console.log(context);
+      if (context.user) {
+        const skillExists = await Skill.findOne({ name: teachSkill });
+        console.log(skillExists);
+        if (skillExists) {
+          //check to skill exists // if not create it// after add id
+          return User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { teachSkill: teachSkill._id } },
+            {
+              new: true,
+            }
+          );
+        } else {
+          const newSkill = await Skill.create({ name: learnSkill });
+          console.log(newSkill);
+          newSkill.teacher.push(context.user._id);
+          await newSkill.save();
+          return User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { teachSkill: newSkill._id } },
+            {
+              new: true,
+            }
+          ).populate("teachSkill");
+        }
+      }
+      throw new AuthenticationError("Not logged in");
+    },
   },
 };
 

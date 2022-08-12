@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 
 const skillSchema = new Schema({
   name: {
@@ -11,16 +11,17 @@ const skillSchema = new Schema({
     required: false,
   },
   teacher: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
   students: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
   ],
-})
+});
 
-const Skill = model('Skill', skillSchema)
+const Skill = model("Skill", skillSchema);
 
-module.exports = Skill
+module.exports = Skill;
