@@ -11,8 +11,12 @@ const SearchBarStyle = styled.div`
   }
 
   .input {
-    padding: 5px 15px;
+    padding: 10px;
     width: 300px;
+    background-color: rgb(237, 232, 226);
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px -7px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 
   .skill-list {
@@ -22,7 +26,7 @@ const SearchBarStyle = styled.div`
     list-style: none;
     margin: 10px 0;
     padding: 10px;
-    background: #666;
+    border: 1px solid white;
     display: flex;
     justify-content: space-between;
   }
@@ -76,7 +80,7 @@ const SearchBar = () => {
           value={name}
           onChange={filter}
           className="input"
-          placeholder="Filter"
+          placeholder="Search our skills"
         />
 
         <div className="skill-list">
