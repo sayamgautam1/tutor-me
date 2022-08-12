@@ -6,7 +6,7 @@ const Heading = styled.h1`
   font-style: normal;
   font-weight: 800;
   font-size: 2em;
-  color: #121212;
+  color: white;
 `;
 
 export default Heading;

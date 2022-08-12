@@ -8,7 +8,7 @@ const Paragraph = styled.p`
   font-weight: 400;
   font-size: 1.5em;
   line-height: 156.19%;
-  color: #121212;
+  color: white;
   letter-spacing: 0.03em;
 `;
 

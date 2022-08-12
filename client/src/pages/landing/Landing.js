@@ -41,13 +41,14 @@ const Content = styled.div`
   max-width: 2000px;
   height: 100%;
   margin: 0 auto;
-  background-color: #fff0f1;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  background-color: #181818;
   display: flex;
   overflow: hidden;
   flex-wrap: wrap;
   flex: 1;
   position: relative;
-  border-radius: 5%;
+  border-radius: 5px;
 `;
 const Left = styled.div`
   flex: 100%;
@@ -107,7 +108,7 @@ const RightImage = styled.div`
     background-position: center right;
     background-image: url(${teacher});
     border-radius: 5%;
-    box-shadow: 5px 10px #ffdfde;
+    box-shadow: 5px 10px #535353;
   }
 `;
 const RowSpacer = styled.div`

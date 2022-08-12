@@ -25,7 +25,7 @@ const Styles = styled.div`
  }
 
  form {
-   background: white;
+   background: #181818;;
    border: 1px solid black;
    display: flex;
    flex-direction: column;
@@ -60,7 +60,7 @@ const Styles = styled.div`
     font-size: 2em;
     font-weight: 600;
     line-height: 24px;
-    padding: 10px;
+    padding: 30px;
     text-align: center;
  }
 
@@ -149,7 +149,7 @@ const Login = (props) => {
               style={{ cursor: "pointer" }}
               type="submit"
             >
-              Submit
+              Login
             </button>
             <button
               className="submitButton"
