@@ -109,7 +109,7 @@ const LoggedInLinks = styled.div`
   width: auto;
   & > a {
     display: block;
-    color: #b4e0e8;
+    color: white;
     text-decoration: none;
     font-weight: 800;
     font-size: 45px;
@@ -224,12 +224,12 @@ const Hamburger = () => {
         ) : Auth.loggedIn() ? (
           <>
             <LoggedInLinks>
-              <Nav.Link as={Link} to="/profile">
+              <Nav.Link style={{ color: "white" }} as={Link} to="/profile">
                 Profile
               </Nav.Link>
             </LoggedInLinks>
             <LoggedInLinks>
-              <Nav.Link as={Link} to="/dashboard">
+              <Nav.Link style={{ color: "white" }} as={Link} to="/dashboard">
                 Dashboard
               </Nav.Link>
             </LoggedInLinks>

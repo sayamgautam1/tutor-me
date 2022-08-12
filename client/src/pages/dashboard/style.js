@@ -1,16 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { breakpoints } from "../../components/Media";
 
-const widthHeightFn = (size, width = 1440) => `${(size / width) * 100}vw`;
-const randColor = () => {
-  return (
-    "#" +
-    Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, "0")
-      .toUpperCase()
-  );
-};
 const FadeOut = keyframes`
   0%{
     opacity: 0;
@@ -19,9 +9,8 @@ const FadeOut = keyframes`
     opacity: 1;
   }
 `;
-
 export const Layout = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   margin: 0 auto;
   opacity: 0;
@@ -41,57 +30,47 @@ export const Layout = styled.div`
     margin: 0px auto;
   }
 `;
-
 export const Content = styled.div`
+  max-width: 2000px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  flex: 1;
+  position: relative;
+  border-radius: 5%;
+`;
+
+export const Row = styled.div`
+  width: 100%;
+  margin-top: 50px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: ${widthHeightFn(32)};
-  max-width: 100%;
-
-  @media (min-width: 1024px) {
-    flex-wrap: nowrap;
-  }
-`;
-export const BoxContainer = styled.div`
-  display: flex;
-  width: ${widthHeightFn(320, 320)};
-  min-height: ${widthHeightFn(200, 320)};
-  flex-direction: column;
-  padding: ${widthHeightFn(20)};
-  margin: ${widthHeightFn(20)};
-  background-color: #afe6f1;
-  height: 100%;
-  border-radius: 25px;
-  @media (min-width: 768px) {
-    width: ${widthHeightFn(320, 768)};
-    min-height: ${widthHeightFn(200, 768)};
-    height: 100%;
-  }
-
-  @media (min-width: 1024px) {
-    width: ${widthHeightFn(500)};
-    min-height: ${widthHeightFn(300)};
-    height: 100%;
+  padding: 50px;
+  @media (min-width: 900px) {
   }
 `;
 
-export const BoxTitle = styled.h3`
-  color: #333;
-  font-size: 2rem;
-  text-align: center;
-
-  @media (min-width: 1024px) {
-    font-size: 1.5rem;
+export const Left = styled.div`
+  flex: 100%;
+  @media (min-width: 900px) {
+    flex: 40%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 `;
 
-export const BoxText = styled.p`
-  margin-top: 5px;
-  color: #666;
-  font-size: 1.5rem;
-
-  @media (min-width: 1024px) {
-    font-size: 1rem;
+export const Right = styled.div`
+  flex: 100%;
+  padding: 20px;
+  @media (min-width: 900px) {
+    flex: 60%;
+    height: auto;
+    display: flex;
+    position: relative;
   }
 `;

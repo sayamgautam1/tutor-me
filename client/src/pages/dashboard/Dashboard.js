@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import { useQuery } from '@apollo/client'
-import { Layout, Content, BoxContainer, BoxText, BoxTitle } from './style'
-import Header from '../../components/header/Header'
-import Hamburger from '../../components/hamburger/Hamburger'
-import SearchBar from '../../components/searchbar/SearchBar'
-import { QUERY_SKILLS } from '../../utils/queries'
+import { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { Layout, Content, Row, Left, Right } from "./style";
+import Header from "../../components/header/Header";
+import Hamburger from "../../components/hamburger/Hamburger";
+import SearchBar from "../../components/searchbar/SearchBar";
+import { QUERY_SKILLS } from "../../utils/queries";
+import AllSkills from "../../components/allSkills/AllSkills";
 
 const Dashboard = () => {
+  const { loading, data } = useQuery(QUERY_SKILLS);
+
+  if (loading) {
+    return <>Loading...</>;
+  }
+
+  const skillsData = data?.me || {};
+  console.log(skillsData);
+
   return (
     <Layout>
       <Header />
       <Hamburger />
 
-      <Content>
-        <BoxContainer>
-          <BoxTitle>Hello</BoxTitle>
-          <BoxText>
-            A paragraph is a series of sentences that are organized and
-            coherent, and are all related to a single topic. Almost every piece
-            of writing you do that is longer than a few sentences should be
-            organized into paragraph
-          </BoxText>
-        </BoxContainer>
-        <BoxContainer>
-          <BoxTitle>Find a Skill...</BoxTitle>
+      <Row>
+        <Left>
           <SearchBar />
-          <BoxText></BoxText>
-        </BoxContainer>
-      </Content>
+        </Left>
+        <Right>
+          <AllSkills skills={skillsData} />
+        </Right>
+      </Row>
     </Layout>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

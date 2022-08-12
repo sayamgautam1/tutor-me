@@ -8,7 +8,7 @@ const resolvers = {
       return User.find();
     },
     skills: async () => {
-      return Skill.find().populate("students");
+      return Skill.find();
     },
     me: async (parent, args, context) => {
       if (context.user) {
