@@ -13,6 +13,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import Profile from "./pages/profile/Profile";
 import Dashboard from "./pages/dashboard/Dashboard";
+import SingleSkill from "./pages/skill/SingleSkill";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,6 +44,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/singleSkill" element={<SingleSkill />} />
       </Routes>
     </BrowserRouter>
   </ApolloProvider>

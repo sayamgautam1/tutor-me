@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledSection, SkillSection } from "./AllSkills-Style";
+import { Link } from "react-router-dom";
 
 const AllSkills = ({ skills }) => {
   return (
@@ -18,6 +19,9 @@ const AllSkills = ({ skills }) => {
               {"skill.name"}
             </h3>
             <p className="grid__item__label">teacher</p>
+            <Link className=".section__see-all" to={`/singleSkill`}>
+              Learn More
+            </Link>
           </div>
         </li>
         {/* ))} */}
