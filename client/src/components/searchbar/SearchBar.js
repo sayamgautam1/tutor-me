@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 
 // import { QUERY_SKILLS } from '../../utils/queries'
 
@@ -30,47 +30,47 @@ const SearchBarStyle = styled.div`
     display: flex;
     justify-content: space-between;
   }
-`;
+`
 
 const SKILLS = [
-  "How to disagree with someone",
-  "how-to video",
-  "How to make money on the App Store",
-  "Learn NextJS in five minutes (Not clickbate)",
-  "Moonwalk",
-  "Shuffle",
-  "Sharpen Knives",
-  "Chop Food Quickly",
-  "Whistle With Your Fingers",
-  "Twirl A Pen",
-  "Take Better Pictures",
-  "Moonwalk1",
-  "Moonwalk2",
-];
+  'How to disagree with someone',
+  'how-to video',
+  'How to make money on the App Store',
+  'Learn NextJS in five minutes (Not clickbate)',
+  'Moonwalk',
+  'Shuffle',
+  'Sharpen Knives',
+  'Chop Food Quickly',
+  'Whistle With Your Fingers',
+  'Twirl A Pen',
+  'Take Better Pictures',
+  'Moonwalk1',
+  'Moonwalk2',
+]
 
 const SearchBar = () => {
   // the value of the search field
-  const [name, setName] = useState("");
+  const [name, setName] = useState('')
 
   // the search result
-  const [foundSkills, setFoundSkills] = useState("");
+  const [foundSkills, setFoundSkills] = useState('')
 
   const filter = (e) => {
-    const keyword = e.target.value;
+    const keyword = e.target.value
 
-    if (keyword !== "") {
+    if (keyword !== '') {
       const results = SKILLS.filter((skills) => {
-        return skills.toLowerCase().startsWith(keyword.toLowerCase());
+        return skills.toLowerCase().startsWith(keyword.toLowerCase())
         // Use the toLowerCase() method to make it case-insensitive
-      });
-      setFoundSkills(results);
+      })
+      setFoundSkills(results)
     } else {
-      setFoundSkills("");
+      setFoundSkills('')
       // If the text field is empty, show all users
     }
 
-    setName(keyword);
-  };
+    setName(keyword)
+  }
 
   return (
     <SearchBarStyle>
@@ -97,6 +97,6 @@ const SearchBar = () => {
         </div>
       </div>
     </SearchBarStyle>
-  );
-};
-export default SearchBar;
+  )
+}
+export default SearchBar
