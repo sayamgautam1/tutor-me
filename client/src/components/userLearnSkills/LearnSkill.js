@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-import { LearnSkillSection, StyledSection } from "./LearnSkill-style";
+import { LearnSkillSection, StyledSection } from './LearnSkill-style'
 
 const LearnSkill = ({ skills }) => {
   return (
@@ -23,7 +23,7 @@ const LearnSkill = ({ skills }) => {
         ))}
       </LearnSkillSection>
     </StyledSection>
-  );
-};
+  )
+}
 
-export default LearnSkill;
+export default LearnSkill

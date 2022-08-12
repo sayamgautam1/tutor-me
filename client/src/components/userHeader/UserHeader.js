@@ -1,5 +1,5 @@
-import StyledHeader from "./UserHeader-Style";
-import image from "../../shared/images/image-victor.jpg";
+import StyledHeader from './UserHeader-Style'
+import image from '../../shared/images/image-victor.jpg'
 
 const UserHeader = ({ data }) => {
   return (
@@ -14,14 +14,14 @@ const UserHeader = ({ data }) => {
             <p className="header__meta">
               <span>
                 {data.name}
-                {data.name !== 1 ? "s" : ""}
+                {data.name !== 1 ? 's' : ''}
               </span>
             </p>
           </div>
         </div>
       </StyledHeader>
     </>
-  );
-};
+  )
+}
 
-export default UserHeader;
+export default UserHeader

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const LearnSkillSection = styled.ul`
   list-style: none;
@@ -61,7 +61,7 @@ export const LearnSkillSection = styled.ul`
       height: 100%;
       object-fit: cover;
       background-color: #282828;
-      border-radius: ${(props) => (props.type === "skill" ? "50%" : "2px")};
+      border-radius: ${(props) => (props.type === 'skill' ? '50%' : '2px')};
     }
   }
 
@@ -75,7 +75,7 @@ export const LearnSkillSection = styled.ul`
     font-size: 14px;
     color: #b3b3b3;
   }
-`;
+`
 export const StyledSection = styled.section`
   &:first-of-type {
     .section__inner {
@@ -113,7 +113,7 @@ export const StyledSection = styled.section`
     color: #b3b3b3;
 
     &::after {
-      content: "/";
+      content: '/';
       display: block;
       margin: 0 12px;
     }
@@ -136,4 +136,4 @@ export const StyledSection = styled.section`
     letter-spacing: 0.1em;
     padding-bottom: 2px;
   }
-`;
+`
