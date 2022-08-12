@@ -1,19 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import hamburger from './hamburger.svg'
-import hamburgerHover from './hamburgerHover.svg'
-import close from './close.svg'
-import { useState } from 'react'
-import { breakpoints } from '../Media'
-import Button from '../button/Button'
-import { FaSearch, FaBriefcase, FaQuestionCircle } from 'react-icons/fa'
-import Nav from 'react-bootstrap/Nav'
-import Login from '../../pages/Login'
-import Signup from '../../pages/Signup'
-import Auth from '../../utils/auth'
-import SearchBar from '../../components/searchbar/SearchBar'
-import { QUERY_SKILLS } from '../../utils/queries'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import hamburger from "./hamburger.svg";
+import hamburgerHover from "./hamburgerHover.svg";
+import close from "./close.svg";
+import { useState } from "react";
+import { breakpoints } from "../Media";
+import Button from "../button/Button";
+import { FaSearch, FaBriefcase, FaQuestionCircle } from "react-icons/fa";
+import Nav from "react-bootstrap/Nav";
+import Login from "../../pages/Login";
+import Signup from "../../pages/Signup";
+import Auth from "../../utils/auth";
+import SearchBar from "../../components/searchbar/SearchBar";
+import { QUERY_SKILLS } from "../../utils/queries";
 
 const HamburgerContainer = styled.div`
   position: fixed;
@@ -27,7 +27,7 @@ const HamburgerContainer = styled.div`
     top: 20px;
     width: unset;
   } ;
-`
+`;
 const HamburgerImg = styled.div`
   z-index: 99999;
   display: block;
@@ -62,21 +62,21 @@ const HamburgerImg = styled.div`
     background-image: ${(props) =>
       props.on ? `url(${hamburgerHover})` : `url(${close})`};
   }
-`
+`;
 
 const NavContainer = styled.div`
   height: 100%;
   z-index: 999;
   width: 100%;
   padding-left: 30px;
-  background-color: white;
-  position: ${(props) => (props.on ? 'fixed' : 'absolute')};
+  background-color: black;
+  position: ${(props) => (props.on ? "fixed" : "absolute")};
   display: block;
   right: 0;
   top: 0;
   opacity: 0;
   animation: ${(props) =>
-    props.on ? 'SlideOutRight .7s forwards' : 'SlideFromLeft .5s forwards'};
+    props.on ? "SlideOutRight .7s forwards" : "SlideFromLeft .5s forwards"};
   @media (min-width: ${breakpoints.mobileMax}) {
     width: 500px;
     right: 0;
@@ -103,7 +103,7 @@ const NavContainer = styled.div`
       opacity: 0;
     }
   }
-`
+`;
 const LoggedInLinks = styled.div`
   margin-top: 100px;
   width: auto;
@@ -118,7 +118,7 @@ const LoggedInLinks = styled.div`
     position: relative;
     z-index: 2;
     opacity: 0;
-    animation: ${(props) => (props.on ? 'none' : 'SlideInText .7s forwards')};
+    animation: ${(props) => (props.on ? "none" : "SlideInText .7s forwards")};
     &:nth-child(2) {
       animation-delay: 0.1s;
     }
@@ -141,7 +141,7 @@ const LoggedInLinks = styled.div`
     &::after {
       width: 0px;
       left: -10px;
-      content: '';
+      content: "";
       display: inline-block;
       height: 20px;
       position: absolute;
@@ -163,7 +163,7 @@ const LoggedInLinks = styled.div`
       width: 205px;
     }
   }
-`
+`;
 
 const Links = styled.div`
   margin-top: 100px;
@@ -171,20 +171,20 @@ const Links = styled.div`
   height: 20%;
   display: flex;
   flex-direction: column;
-`
+`;
 const SearchBox = styled.div`
   font-size: 2em;
   line-height: 2em;
   height: 35%;
   letter-spacing: 0.03em;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   .blue {
     color: #ff6362;
   }
   .button {
     background-color: #ff6362;
     color: white;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     font-size: 25px;
     padding: 7px;
@@ -193,29 +193,29 @@ const SearchBox = styled.div`
     line-height: 156.19%;
     margin-bottom: 50px;
   }
-`
+`;
 const Hamburger = () => {
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(true);
 
-  const [visibleComponent, setVisibleComponent] = useState('')
+  const [visibleComponent, setVisibleComponent] = useState("");
 
   const logout = (event) => {
-    event.preventDefault()
-    Auth.logout()
-  }
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
     <HamburgerContainer on={toggle}>
       <HamburgerImg on={toggle} onClick={() => setToggle(!toggle)} />
 
       <NavContainer on={toggle}>
-        {visibleComponent === 'login' ? (
+        {visibleComponent === "login" ? (
           <div>
             <SearchBox>
               <Login stateChanger={setVisibleComponent} />
             </SearchBox>
           </div>
-        ) : visibleComponent === 'signup' ? (
+        ) : visibleComponent === "signup" ? (
           <div>
             <SearchBox>
               <Signup stateChanger={setVisibleComponent} />
@@ -237,7 +237,7 @@ const Hamburger = () => {
               <SearchBox>
                 <button
                   className="button"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   onClick={(e) => logout(e)}
                 >
                   Logout
@@ -250,8 +250,8 @@ const Hamburger = () => {
             <SearchBox>
               <button
                 className="button"
-                style={{ cursor: 'pointer' }}
-                onClick={() => setVisibleComponent('login')}
+                style={{ cursor: "pointer" }}
+                onClick={() => setVisibleComponent("login")}
               >
                 Log In
               </button>
@@ -259,8 +259,8 @@ const Hamburger = () => {
 
             <Button
               className="button"
-              style={{ cursor: 'pointer' }}
-              onClick={() => setVisibleComponent('signup')}
+              style={{ cursor: "pointer" }}
+              onClick={() => setVisibleComponent("signup")}
             >
               Sign up
             </Button>
@@ -278,7 +278,7 @@ const Hamburger = () => {
         )}
       </NavContainer>
     </HamburgerContainer>
-  )
-}
+  );
+};
 
-export default Hamburger
+export default Hamburger;

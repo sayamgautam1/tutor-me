@@ -201,3 +201,8 @@ export const Content = styled.div`
   position: relative;
   border-radius: 5%;
 `;
+
+export const RowSpacer = styled.div`
+  width: 100%;
+  padding: 40px 0;
+`;
