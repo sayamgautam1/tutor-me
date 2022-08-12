@@ -1,7 +1,7 @@
-import styled, { keyframes } from "styled-components";
-import { breakpoints } from "../Media";
+import styled, { keyframes } from 'styled-components'
+import { breakpoints } from '../Media'
 
-import Container from "../container/Container";
+import Container from '../container/Container'
 
 export const Float = keyframes`
   from {
@@ -12,7 +12,7 @@ export const Float = keyframes`
     transform: translateY(0);
     opacity: 1;
   }
-`;
+`
 const HeadingMain = styled.h1`
   font-weight: 700;
   font-size: 7vw;
@@ -44,7 +44,7 @@ const HeadingMain = styled.h1`
   > span:nth-child(3) {
     animation-delay: 0.4s;
   }
-`;
+`
 
 function Header() {
   return (
@@ -55,7 +55,7 @@ function Header() {
         </span>
       </HeadingMain>
     </Container>
-  );
+  )
 }
 
-export default Header;
+export default Header

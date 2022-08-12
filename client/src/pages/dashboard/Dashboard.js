@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { Layout, Content, BoxContainer, BoxText, BoxTitle } from './style'
 import Header from '../../components/header/Header'
@@ -22,9 +23,9 @@ const Dashboard = () => {
           </BoxText>
         </BoxContainer>
         <BoxContainer>
-          <BoxTitle>Hello</BoxTitle>
+          <BoxTitle>Find a Skill...</BoxTitle>
           <SearchBar />
-          <BoxText>Hello text</BoxText>
+          <BoxText></BoxText>
         </BoxContainer>
       </Content>
     </Layout>
