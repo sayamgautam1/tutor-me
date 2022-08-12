@@ -22,7 +22,7 @@ const SearchBarStyle = styled.div`
     list-style: none;
     margin: 10px 0;
     padding: 10px;
-    background: #eee;
+    background: #666;
     display: flex;
     justify-content: space-between;
   }

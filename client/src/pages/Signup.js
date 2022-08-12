@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
+import { useMutation } from '@apollo/client'
+import { ADD_USER } from '../utils/mutations'
 
-import Auth from "../utils/auth";
+import Auth from '../utils/auth'
 
 const Styles = styled.div`
  
@@ -82,39 +82,41 @@ const Styles = styled.div`
   border-radius: 5px;
   line-height: 156.19%;
   margin-bottom: 5px;
-`;
+`
 
 const Signup = (props) => {
   const [formState, setFormState] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+    username: '',
+    email: '',
+    age: '',
+    location: '',
+    password: '',
+  })
+  const [addUser, { error, data }] = useMutation(ADD_USER)
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
 
     setFormState({
       ...formState,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
+    event.preventDefault()
+    console.log(formState)
 
     try {
       const { data } = await addUser({
         variables: { ...formState },
-      });
+      })
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token)
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  };
+  }
 
   return (
     <Styles>
@@ -134,6 +136,22 @@ const Signup = (props) => {
               value={formState.name}
               onChange={handleChange}
             />
+            {/* <input
+              className="form-input"
+              placeholder="Your age"
+              name="age"
+              type="text"
+              value={formState.age}
+              onChange={handleChange}
+            />
+            <input
+              className="form-input"
+              placeholder="Your location"
+              name="location"
+              type="text"
+              value={formState.location}
+              onChange={handleChange}
+            /> */}
             <input
               className="form-input"
               placeholder="Your email"
@@ -152,16 +170,16 @@ const Signup = (props) => {
             />
             <button
               className="submitButton"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
               type="submit"
             >
               Submit
             </button>
             <button
               className="submitButton"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
               onClick={() => {
-                props.stateChanger("");
+                props.stateChanger('')
               }}
               type="reset"
             >
@@ -173,7 +191,7 @@ const Signup = (props) => {
 
       {error && <div className="error">{error.message}</div>}
     </Styles>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup
