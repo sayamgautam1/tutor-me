@@ -24,18 +24,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-<<<<<<< HEAD
-  // age: {
-  //   type: String,
-  //   required: true,
-  //   trim: true,
-  // },
-  // location: {
-  //   type: String,
-  //   required: true,
-  //   trim: true,
-  // },
-=======
   age: {
     type: String,
     // required: true,
@@ -46,7 +34,6 @@ const userSchema = new Schema({
     // required: true,
     trim: true,
   },
->>>>>>> 6c29f2df7a3936344b66f875d287bb66145dac23
   teachSkill: [
     {
       type: Schema.Types.ObjectId,
