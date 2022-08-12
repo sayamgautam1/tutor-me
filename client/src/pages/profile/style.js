@@ -149,7 +149,8 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
-  flex: 100%;
+  width:100%
+  display: flex;
   @media (min-width: 900px) {
     flex: 50%;
     height: 100%;
@@ -167,7 +168,7 @@ const FadeOut = keyframes`
   }
 `;
 export const Layout = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   margin: 0 auto;
   opacity: 0;

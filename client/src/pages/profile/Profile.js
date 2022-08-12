@@ -3,23 +3,9 @@ import React from "react";
 import { QUERY_ME } from "../../utils/queries";
 import Header from "../../components/header/Header";
 import Hamburger from "../../components/hamburger/Hamburger";
-import {
-  Wrapper,
-  Card,
-  Head,
-  Avatar,
-  Title,
-  Name,
-  Age,
-  City,
-  Stats,
-  StatFigure,
-  StatTitle,
-  Left,
-  Right,
-  Layout,
-} from "./style";
-
+import UserHeader from "../../components/userHeader/UserHeader";
+import { Layout } from "./style";
+import LearnSkill from "../../components/userLearnSkills/LearnSkill";
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
 
@@ -31,69 +17,14 @@ const Profile = () => {
 
   return (
     <>
-      {/* <p>Profile Page</p>
-      Id: {profileData._id}
-      <br />
-      Email: {profileData.email}
-      <br />
-      Username: {profileData.username} */}
       <Header />
       <Hamburger />
       <Layout>
-        <Wrapper>
-          <Left>
-            <Card>
-              <Head>
-                {/* <Avatar src={ProfilePicture} alt="" /> */}
-                {console.log(profileData)}
-
-                <Title>
-                  <Name>Welcome, {profileData.name} !</Name>
-                  <br></br>
-                  <Age>Age: {profileData.age}</Age>
-                  <br></br>
-                  <Name>{profileData.email}</Name>
-                </Title>
-
-                <City>City: London</City>
-              </Head>
-
-              <section>
-                <Stats>
-                  <li>
-                    <StatFigure>80K</StatFigure>
-                    <StatTitle>Followers</StatTitle>
-                  </li>
-                  <li>
-                    <StatFigure>803K</StatFigure>
-                    <StatTitle>Likes</StatTitle>
-                  </li>
-                  <li>
-                    <StatFigure>1.4K</StatFigure>
-                    <StatTitle>Photos</StatTitle>
-                  </li>
-                </Stats>
-              </section>
-            </Card>
-          </Left>
-          <Right>
-            <Card>
-              <Name>
-                {"Currently Learning"}
-                {profileData.learnSkill.map((skill) => (
-                  <li key={skill.index}>{skill.name}</li>
-                ))}
-              </Name>
-            </Card>
-            <br></br>
-            <Card>
-              <Name>{"Currently Teaching"}</Name>
-              {/* {const myList = myArray.map((item)=> <Age>{item}</Age>)} */}
-            </Card>
-            {/* {profileData.learning}
-            {profileData.teaching} */}
-          </Right>
-        </Wrapper>
+        <UserHeader data={profileData} />
+        <h1> learning skill</h1>
+        <LearnSkill skills={profileData.learnSkill} />
+        <h1> teaching skill</h1>
+        <LearnSkill skills={profileData.learnSkill} />
       </Layout>
     </>
   );
