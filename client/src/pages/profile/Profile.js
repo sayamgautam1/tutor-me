@@ -22,9 +22,9 @@ const Profile = () => {
       <Layout>
         <UserHeader data={profileData} />
         <RowSpacer />
-        <h1> learning skill</h1>
+        <h1> Learning skill</h1>
         <LearnSkill skills={profileData.learnSkill} />
-        <h1> teaching skill</h1>
+        <h1> Teaching skill</h1>
         <LearnSkill skills={profileData.learnSkill} />
       </Layout>
     </>

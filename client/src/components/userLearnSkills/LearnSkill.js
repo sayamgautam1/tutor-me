@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { LearnSkillSection, StyledSection } from './LearnSkill-style'
+import { LearnSkillSection, StyledSection } from "./LearnSkill-style";
 
 const LearnSkill = ({ skills }) => {
   return (
@@ -17,13 +17,14 @@ const LearnSkill = ({ skills }) => {
               <h3 className="grid__item__name overflow-ellipsis">
                 {skill.name}
               </h3>
-              <p className="grid__item__label">teacher</p>
+              <p className="grid__item__label">{skill.teacher.toUpperCase()}</p>
             </div>
+            {"todo add link to specific skill "}
           </li>
         ))}
       </LearnSkillSection>
     </StyledSection>
-  )
-}
+  );
+};
 
-export default LearnSkill
+export default LearnSkill;
