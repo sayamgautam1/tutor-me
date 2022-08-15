@@ -8,16 +8,12 @@ export const QUERY_ME = gql`
       teachSkill {
         _id
         name
-        teacher {
-          username
-        }
+        classLength
       }
       learnSkill {
         _id
         name
-        teacher {
-          username
-        }
+        classLength
       }
     }
   }
@@ -30,10 +26,12 @@ export const QUERY_SKILLS = gql`
       classLength
       teacher {
         username
+        _id
       }
       students {
         username
         email
+        _id
       }
     }
   }

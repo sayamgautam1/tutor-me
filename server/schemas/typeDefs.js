@@ -16,6 +16,11 @@ const typeDefs = gql`
     classLength: Int
     teacher: User
     students: [User]
+    availTimes: [SkillTime]
+  }
+  type SkillTime {
+    startTime: String
+    endTime: String
   }
 
   type Auth {

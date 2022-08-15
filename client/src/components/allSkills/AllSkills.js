@@ -8,7 +8,7 @@ const AllSkills = ({ skills }) => {
       <SkillSection>
         {console.log(skills)}
         {skills.map((skill) => (
-          <li className="grid__item" key={skill.index}>
+          <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
               {/* {skill.images[0] && (
                 <div className="grid__item__img">
@@ -18,7 +18,8 @@ const AllSkills = ({ skills }) => {
               <h3 className="grid__item__name overflow-ellipsis">
                 {skill.name}
               </h3>
-              <p className="grid__item__label">{`skill.teacher.toUpperCase()`}</p>
+              {console.log(skill.teacher.username)}
+              <p className="grid__item__label">{skill.teacher.username}</p>
               <Link className=".section__see-all" to={`/skills/${skill._id}`}>
                 Learn More
               </Link>

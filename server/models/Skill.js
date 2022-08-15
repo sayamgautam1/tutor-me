@@ -16,13 +16,23 @@ const skillSchema = new Schema({
   },
   teacher: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: 'User',
   },
   students: [
     {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
     },
+  ],
+  availTimes: [
+    new Schema({
+      startTime: {
+        type: Date,
+      },
+      endTime: {
+        type: Date,
+      },
+    }),
   ],
 })
 

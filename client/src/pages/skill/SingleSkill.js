@@ -30,7 +30,7 @@ const SingleSkill = () => {
           <div className="header__inner">
             {/* <img className="header__img" src={image} alt="Avatar" /> */}
             <div>
-              <div className="header__overline">{`${skill.teacher} presents`}</div>
+              <div className="header__overline">{`${skill.teacher.username} presents`}</div>
               <h1 className="header__name">{skill.name}</h1>
               <p className="header__meta">
                 <span>{`course duration ${skill.classLength} classes`}</span>
