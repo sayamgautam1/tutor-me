@@ -1,26 +1,26 @@
-[{
-    "name":"Japanese Cooking",
-    "classLength":"30",
-    "teacher":"drew",
-    "students":["portia"]
-
-
-},{
-    "name":"German Dancing",
-    "classLength":"30",
-    "teacher":"dory",
-    "students":["drew"]
-},{
-    "name":"English",
-    "classLength":"30",
-    "teacher":"portia",
-    "students":["elliot"]
-
-
-},{
-    "name":"Rhino Riding",
-    "classLength":"3",
-    "teacher":"elliot",
-    "students":["drew", "portia", "dory"]
-}
+[
+  {
+    "name": "Japanese Cooking",
+    "classLength": "30",
+    "teacher": "elliot",
+    "students": ["dory"]
+  },
+  {
+    "name": "German Dancing",
+    "classLength": "30",
+    "teacher": "drew",
+    "students": ["dory"]
+  },
+  {
+    "name": "English",
+    "classLength": "30",
+    "teacher": "portia",
+    "students": ["elliot"]
+  },
+  {
+    "name": "Rhino Riding",
+    "classLength": "3",
+    "teacher": "portia",
+    "students": ["drew"]
+  }
 ]

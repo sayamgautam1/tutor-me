@@ -11,13 +11,15 @@ const skillSchema = new Schema({
     required: false,
   },
   teacher: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
+    required: true,
+    trim: true,
   },
   students: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+      type: String,
+      required: true,
+      trim: true,
     },
   ],
 });
