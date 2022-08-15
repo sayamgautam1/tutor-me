@@ -28,7 +28,11 @@ const SingleSkill = () => {
       <Layout>
         <StyledHeader type="skill">
           <div className="header__inner">
-            {/* <img className="header__img" src={image} alt="Avatar" /> */}
+            <img
+              className="header__img"
+              src={`https://avatars.dicebear.com/api/jdenticon/${skill.name}.svg`}
+              alt="Avatar"
+            />
             <div>
               <div className="header__overline">{`${skill.teacher.username} presents`}</div>
               <h1 className="header__name">{skill.name}</h1>
