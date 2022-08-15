@@ -3,72 +3,144 @@
     "name": "Japanese Cooking",
     "classLength": "30",
     "teacher": "62fa0afa8ae7df09f05f96d5",
-    "students": ["62fa0fbddd7dc403e53d9f6e", "62fa0afa8ae7df09f05f96d5"]
+    "students": ["62fa0fbddd7dc403e53d9f6e", "62fa0afa8ae7df09f05f96d5"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "German Dancing",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6e",
-    "students": ["62fa0fbddd7dc403e53d9f6d"]
+    "students": ["62fa0fbddd7dc403e53d9f6d"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "English",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6d",
-    "students": ["62fa0fbddd7dc403e53d9f71"]
+    "students": ["62fa0fbddd7dc403e53d9f71"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Rhino Riding",
     "classLength": "3",
-    "teacher": "62fa0fbddd7dc403e53d9f6f",
-    "students": ["62fa0fbddd7dc403e53d9f6d"]
+    "teacher": "62fa0fbddd7dc403e53d9f70",
+    "students": ["62fa0fbddd7dc403e53d9f6d"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Chinese Cooking",
     "classLength": "30",
-    "teacher": "62fa0fbddd7dc403e53d9f72",
-    "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f6e"]
+    "teacher": "62fa0fbddd7dc403e53d9f6e",
+    "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f6e"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Russian Dancing",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f71",
-    "students": ["62fa0fbddd7dc403e53d9f71"]
+    "students": ["62fa0fbddd7dc403e53d9f71"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Australian Slang 101",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f72",
-    "students": ["62fa0fbddd7dc403e53d9f71", "62fa0fbddd7dc403e53d9f6e"]
+    "students": ["62fa0fbddd7dc403e53d9f71", "62fa0fbddd7dc403e53d9f6e"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Giraffe Riding",
     "classLength": "3",
     "teacher": "62fa0fbddd7dc403e53d9f72",
-    "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f71"]
+    "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f71"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Thai Cooking",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f72",
-    "students": ["62fa0fbddd7dc403e53d9f71"]
+    "students": ["62fa0fbddd7dc403e53d9f71"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Country Dancing",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6e",
-    "students": ["62fa0fbddd7dc403e53d9f6e"]
+    "students": ["62fa0fbddd7dc403e53d9f6e"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "American",
     "classLength": "30",
     "teacher": "62fa0afa8ae7df09f05f96d5",
-    "students": ["62fa0fbddd7dc403e53d9f79", "62fa0fbddd7dc403e53d9f71"]
+    "students": ["62fa0fbddd7dc403e53d9f79", "62fa0fbddd7dc403e53d9f71"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   },
   {
     "name": "Llama Riding",
     "classLength": "3",
     "teacher": "62fa0fbddd7dc403e53d9f72",
-    "students": ["62fa0fbddd7dc403e53d9f6e"]
+    "students": ["62fa0fbddd7dc403e53d9f6e"],
+    "availTimes": [
+      {
+        "startTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)",
+        "endTime": "Mon Aug 15 2022 19:49:28 GMT+0930 (Australian Central Standard Time)"
+      }
+    ]
   }
 ]

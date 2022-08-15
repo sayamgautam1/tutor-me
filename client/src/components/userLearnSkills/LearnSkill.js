@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { LearnSkillSection, StyledSection } from "./LearnSkill-style";
 
@@ -8,7 +9,7 @@ const LearnSkill = ({ skills }) => {
       {console.log(skills)}
       <LearnSkillSection>
         {skills.map((skill) => (
-          <li className="grid__item" key={skill.index}>
+          <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
               {/* {skill.images[0] && (
                 <div className="grid__item__img">
@@ -18,9 +19,11 @@ const LearnSkill = ({ skills }) => {
               <h3 className="grid__item__name overflow-ellipsis">
                 {skill.name}
               </h3>
-              <p className="grid__item__label">{`skill.teacher.toUpperCase()`}</p>
+              <p className="grid__item__label">{`${skill.classLength} mins`}</p>
             </div>
-            {"todo add link to specific skill "}
+            <Link className=".section__see-all" to={`/skills/${skill._id}`}>
+              Learn More
+            </Link>
           </li>
         ))}
       </LearnSkillSection>

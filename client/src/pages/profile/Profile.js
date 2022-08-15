@@ -17,6 +17,7 @@ const Profile = () => {
 
   return (
     <>
+      {console.log(profileData)}
       <Header />
       <Hamburger />
       <Layout>

@@ -20,6 +20,16 @@ const skillSchema = new Schema({
       ref: "User",
     },
   ],
+  availTimes: [
+    new Schema({
+      startTime: {
+        type: Date,
+      },
+      endTime: {
+        type: Date,
+      },
+    }),
+  ],
 });
 
 const Skill = model("Skill", skillSchema);
