@@ -1,6 +1,6 @@
-import React from "react";
-import { StyledSection, SkillSection } from "./AllSkills-Style";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { StyledSection, SkillSection } from './AllSkills-Style'
+import { Link } from 'react-router-dom'
 
 const AllSkills = ({ skills }) => {
   return (
@@ -27,7 +27,7 @@ const AllSkills = ({ skills }) => {
         ))}
       </SkillSection>
     </StyledSection>
-  );
-};
+  )
+}
 
-export default AllSkills;
+export default AllSkills
