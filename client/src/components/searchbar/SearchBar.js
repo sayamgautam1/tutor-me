@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import { useQuery } from '@apollo/client'
 
-// import { QUERY_SKILLS } from '../../utils/queries'
+import styled from 'styled-components'
+import { QUERY_SKILLS } from '../../utils/queries'
 
 const SearchBarStyle = styled.div`
   .container {
@@ -9,7 +10,16 @@ const SearchBarStyle = styled.div`
     width: 300px;
     margin: auto;
   }
-
+  .heading {
+    border-bottom: 1px solid white;
+    color: #ff6464;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 30px;
+    text-align: center;
+  }
   .input {
     padding: 10px;
     width: 300px;
@@ -32,23 +42,23 @@ const SearchBarStyle = styled.div`
   }
 `
 
-const SKILLS = [
-  'How to disagree with someone',
-  'how-to video',
-  'How to make money on the App Store',
-  'Learn NextJS in five minutes (Not clickbate)',
-  'Moonwalk',
-  'Shuffle',
-  'Sharpen Knives',
-  'Chop Food Quickly',
-  'Whistle With Your Fingers',
-  'Twirl A Pen',
-  'Take Better Pictures',
-  'Moonwalk1',
-  'Moonwalk2',
-]
+// const SKILLS = [
+//   'How to disagree with someone',
+//   'how-to video',
+//   'How to make money on the App Store',
+//   'Learn NextJS in five minutes (Not clickbate)',
+//   'Moonwalk',
+//   'Shuffle',
+//   'Sharpen Knives',
+//   'Chop Food Quickly',
+//   'Whistle With Your Fingers',
+//   'Twirl A Pen',
+//   'Take Better Pictures',
+//   'Moonwalk1',
+//   'Moonwalk2',
+// ]
 
-const SearchBar = () => {
+const SearchBar = ({ SKILLS }) => {
   // the value of the search field
   const [name, setName] = useState('')
 
@@ -75,6 +85,7 @@ const SearchBar = () => {
   return (
     <SearchBarStyle>
       <div className="container">
+        <h1 className="heading">Search Skill</h1>
         <input
           type="search"
           value={name}
