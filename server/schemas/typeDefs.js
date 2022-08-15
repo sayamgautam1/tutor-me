@@ -14,7 +14,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     classLength: Int
-    teacher: String
+    teacher: User
     students: [User]
   }
 

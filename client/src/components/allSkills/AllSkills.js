@@ -1,6 +1,6 @@
-import React from 'react'
-import { StyledSection, SkillSection } from './AllSkills-Style'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { StyledSection, SkillSection } from "./AllSkills-Style";
+import { Link } from "react-router-dom";
 
 const AllSkills = ({ skills }) => {
   return (
@@ -18,7 +18,7 @@ const AllSkills = ({ skills }) => {
               <h3 className="grid__item__name overflow-ellipsis">
                 {skill.name}
               </h3>
-              <p className="grid__item__label">{skill.teacher.toUpperCase()}</p>
+              <p className="grid__item__label">{`skill.teacher.toUpperCase()`}</p>
               <Link className=".section__see-all" to={`/skills/${skill._id}`}>
                 Learn More
               </Link>
@@ -27,7 +27,7 @@ const AllSkills = ({ skills }) => {
         ))}
       </SkillSection>
     </StyledSection>
-  )
-}
+  );
+};
 
-export default AllSkills
+export default AllSkills;
