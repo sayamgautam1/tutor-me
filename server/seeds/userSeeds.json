@@ -26,5 +26,33 @@
     "password": "password01",
     "age": "23",
     "location": "Brisbane"
+  },  
+  {
+    "username": "troy",
+    "email": "troy@email.com",
+    "password": "password01",
+    "age": "53",
+    "location": "Detroit"
+  },
+  {
+    "username": "meghan",
+    "email": "meghan@email.com",
+    "password": "password01",
+    "age": "25",
+    "location": "Chicago"
+  },
+  {
+    "username": "nancy",
+    "email": "nancy@email.com",
+    "password": "password01",
+    "age": "93",
+    "location": "Tokyo"
+  },
+  {
+    "username": "asuna",
+    "email": "asuna@email.com",
+    "password": "password01",
+    "age": "20",
+    "location": "Ayer's Rock"
   }
 ]
