@@ -14,7 +14,7 @@ db.once("open", async () => {
     for (let i = 0; i < skillSeeds.length; i++) {
       const { _id, teacher, students } = await Skill.create(skillSeeds[i]);
       const userTeacher = await User.findOneAndUpdate(
-        { username: teacher },
+        { _id: teacher },
         {
           $addToSet: {
             teachSkill: _id,
@@ -23,7 +23,7 @@ db.once("open", async () => {
       );
       students.forEach(async (student) => {
         const userStudnet = await User.findOneAndUpdate(
-          { username: student },
+          { _id: student },
           {
             $addToSet: {
               learnSkill: _id,
@@ -96,3 +96,5 @@ db.once("open", async () => {
 //   console.info("Seeding complete! 🌱");
 //   process.exit(0);
 // });
+
+///

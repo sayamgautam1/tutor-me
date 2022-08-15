@@ -2,73 +2,73 @@
   {
     "name": "Japanese Cooking",
     "classLength": "30",
-    "teacher": "elliot",
-    "students": ["dory"]
+    "teacher": "62fa0afa8ae7df09f05f96d5",
+    "students": ["62fa0fbddd7dc403e53d9f6e", "62fa0afa8ae7df09f05f96d5"]
   },
   {
     "name": "German Dancing",
     "classLength": "30",
-    "teacher": "drew",
-    "students": ["dory"]
+    "teacher": "62fa0fbddd7dc403e53d9f6e",
+    "students": ["62fa0fbddd7dc403e53d9f6d"]
   },
   {
     "name": "English",
     "classLength": "30",
-    "teacher": "portia",
-    "students": ["elliot"]
+    "teacher": "62fa0fbddd7dc403e53d9f6d",
+    "students": ["62fa0fbddd7dc403e53d9f71"]
   },
   {
     "name": "Rhino Riding",
     "classLength": "3",
-    "teacher": "portia",
-    "students": ["drew"]
+    "teacher": "62fa0fbddd7dc403e53d9f6f",
+    "students": ["62fa0fbddd7dc403e53d9f6d"]
   },
-    {
+  {
     "name": "Chinese Cooking",
     "classLength": "30",
-    "teacher": "elliot",
-    "students": ["dory"]
+    "teacher": "62fa0fbddd7dc403e53d9f72",
+    "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f6e"]
   },
   {
     "name": "Russian Dancing",
     "classLength": "30",
-    "teacher": "drew",
-    "students": ["dory"]
+    "teacher": "62fa0fbddd7dc403e53d9f71",
+    "students": ["62fa0fbddd7dc403e53d9f71"]
   },
   {
     "name": "Australian Slang 101",
     "classLength": "30",
-    "teacher": "portia",
-    "students": ["elliot"]
+    "teacher": "62fa0fbddd7dc403e53d9f72",
+    "students": ["62fa0fbddd7dc403e53d9f71", "62fa0fbddd7dc403e53d9f6e"]
   },
   {
     "name": "Giraffe Riding",
     "classLength": "3",
-    "teacher": "portia",
-    "students": ["drew"]
+    "teacher": "62fa0fbddd7dc403e53d9f72",
+    "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f71"]
   },
-    {
+  {
     "name": "Thai Cooking",
     "classLength": "30",
-    "teacher": "elliot",
-    "students": ["dory"]
+    "teacher": "62fa0fbddd7dc403e53d9f72",
+    "students": ["62fa0fbddd7dc403e53d9f71"]
   },
   {
     "name": "Country Dancing",
     "classLength": "30",
-    "teacher": "drew",
-    "students": ["dory"]
+    "teacher": "62fa0fbddd7dc403e53d9f6e",
+    "students": ["62fa0fbddd7dc403e53d9f6e"]
   },
   {
     "name": "American",
     "classLength": "30",
-    "teacher": "portia",
-    "students": ["elliot"]
+    "teacher": "62fa0afa8ae7df09f05f96d5",
+    "students": ["62fa0fbddd7dc403e53d9f79", "62fa0fbddd7dc403e53d9f71"]
   },
   {
     "name": "Llama Riding",
     "classLength": "3",
-    "teacher": "portia",
-    "students": ["drew"]
+    "teacher": "62fa0fbddd7dc403e53d9f72",
+    "students": ["62fa0fbddd7dc403e53d9f6e"]
   }
 ]
