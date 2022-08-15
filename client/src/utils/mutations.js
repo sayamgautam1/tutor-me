@@ -36,3 +36,17 @@ export const ADD_LEARN_SKILL = gql`
     }
   }
 `
+
+export const ADD_TEACH_SKILL = gql`
+  mutation addTeachSkill($teachSkill: String!) {
+    addTeachSkill(teachSkill: $teachSkill) {
+      email
+      teachSkill {
+        name
+        classLength
+        description
+        teacher
+      }
+    }
+  }
+`

@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose')
 
 const skillSchema = new Schema({
   name: {
@@ -8,6 +8,10 @@ const skillSchema = new Schema({
   },
   classLength: {
     type: Number,
+    required: false,
+  },
+  description: {
+    type: String,
     required: false,
   },
   teacher: {
@@ -22,8 +26,8 @@ const skillSchema = new Schema({
       trim: true,
     },
   ],
-});
+})
 
-const Skill = model("Skill", skillSchema);
+const Skill = model('Skill', skillSchema)
 
-module.exports = Skill;
+module.exports = Skill
