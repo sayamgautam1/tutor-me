@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { useQuery } from "@apollo/client";
-import { Layout, Content, Row, Left, Right } from "./style";
+import { Layout, Row, Left, Right } from "./style";
 import Header from "../../components/header/Header";
 import Hamburger from "../../components/hamburger/Hamburger";
 import SearchBar from "../../components/searchbar/SearchBar";
@@ -14,7 +13,7 @@ const Dashboard = () => {
     return <>Loading...</>;
   }
 
-  const skillsData = data?.me || {};
+  const skillsData = data?.skills || {};
   console.log(skillsData);
 
   return (

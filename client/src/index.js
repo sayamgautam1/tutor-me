@@ -44,7 +44,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/singleSkill" element={<SingleSkill />} />
+        <Route path="/skills/:skillId" element={<SingleSkill />} />
       </Routes>
     </BrowserRouter>
   </ApolloProvider>

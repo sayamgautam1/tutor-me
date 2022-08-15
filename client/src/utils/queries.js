@@ -20,8 +20,10 @@ export const QUERY_ME = gql`
 export const QUERY_SKILLS = gql`
   query Skills {
     skills {
-      name
       teacher
+      name
+      _id
+      classLength
     }
   }
 `;

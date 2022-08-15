@@ -1,16 +1,15 @@
-import styled, { keyframes } from "styled-components";
-import { breakpoints } from "../../components/Media";
+import styled from "styled-components";
 
 export const SkillSection = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: 50% 50%;
   grid-gap: 12px;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: 33% 33% 33%;
     grid-gap: 24px;
   }
 
