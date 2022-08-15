@@ -27,3 +27,13 @@ export const QUERY_SKILLS = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_SKILL = gql`
+  query ($skillId: ID!) {
+    skill(skillId: $skillId) {
+      name
+      classLength
+      teacher
+    }
+  }
+`;

@@ -2,8 +2,25 @@ import React from "react";
 import Hamburger from "../../components/hamburger/Hamburger";
 import Header from "../../components/header/Header";
 import { Layout, StyledHeader } from "./SingleSkill-style";
+// Import the `useParams()` hook
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+
+import { QUERY_SINGLE_SKILL } from "../../utils/queries";
 
 const SingleSkill = () => {
+  const { skillId } = useParams();
+
+  const { loading, data } = useQuery(QUERY_SINGLE_SKILL, {
+    // pass URL parameter
+    variables: { skillId: skillId },
+  });
+
+  const skill = data?.skill || {};
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <Header />
@@ -13,10 +30,10 @@ const SingleSkill = () => {
           <div className="header__inner">
             {/* <img className="header__img" src={image} alt="Avatar" /> */}
             <div>
-              <div className="header__overline">Title</div>
-              <h1 className="header__name">name</h1>
+              <div className="header__overline">{`${skill.teacher} presents`}</div>
+              <h1 className="header__name">{skill.name}</h1>
               <p className="header__meta">
-                <span>other details</span>
+                <span>{`course duration ${skill.classLength} classes`}</span>
               </p>
             </div>
           </div>
