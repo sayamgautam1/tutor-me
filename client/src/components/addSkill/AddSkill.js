@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { useMutation } from '@apollo/client'
-import { ADD_TEACH_SKILL } from '../utils/mutations'
-
-import Auth from '../utils/auth'
+import { ADD_TEACH_SKILL } from '../../utils/mutations'
+import Auth from '../../utils/auth'
 
 const Styles = styled.div`
  
@@ -123,7 +122,7 @@ const AddSkill = (props) => {
         console.log('Skill Added Successfully')
       ) : (
         <>
-          <h1 className="heading">Sign Up</h1>
+          <h1 className="heading">Add Skill</h1>
           <form onSubmit={handleFormSubmit}>
             <input
               className="form-input"
@@ -143,10 +142,10 @@ const AddSkill = (props) => {
             />
             <input
               className="form-input"
-              placeholder="******"
-              name="password"
-              type="password"
-              value={formState.password}
+              placeholder="Description"
+              name="description"
+              type="text"
+              value={formState.description}
               onChange={handleChange}
             />
             <button
@@ -154,9 +153,9 @@ const AddSkill = (props) => {
               style={{ cursor: 'pointer' }}
               type="submit"
             >
-              Sign Up
+              ADD
             </button>
-            <button
+            {/* <button
               className="submitButton"
               style={{ cursor: 'pointer' }}
               onClick={() => {
@@ -165,7 +164,7 @@ const AddSkill = (props) => {
               type="reset"
             >
               Cancel
-            </button>
+            </button> */}
           </form>
         </>
       )}
