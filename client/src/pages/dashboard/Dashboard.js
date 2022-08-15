@@ -28,11 +28,10 @@ const Dashboard = () => {
 
       <Row>
         <Left>
-          <AddSkill />
-          <SearchBar SKILLS={SKILLS} />
+          <AddSkill /> <AllSkills skills={skillsData} />
         </Left>
         <Right>
-          <AllSkills skills={skillsData} />
+          <SearchBar SKILLS={SKILLS} />
         </Right>
       </Row>
     </Layout>

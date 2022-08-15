@@ -54,8 +54,6 @@ const SearchBarStyle = styled.div`
 //   'Whistle With Your Fingers',
 //   'Twirl A Pen',
 //   'Take Better Pictures',
-//   'Moonwalk1',
-//   'Moonwalk2',
 // ]
 
 const SearchBar = ({ SKILLS }) => {
