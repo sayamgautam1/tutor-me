@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { useMutation } from "@apollo/client";
-import { ADD_TEACH_SKILL } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import React, { useState } from 'react'
+import { useQuery } from '@apollo/client'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { useMutation } from '@apollo/client'
+import { ADD_TEACH_SKILL } from '../../utils/mutations'
+import Auth from '../../utils/auth'
+import { QUERY_SKILLS } from '../../utils/queries'
 
 const Styles = styled.div`
  
@@ -90,83 +92,81 @@ const Styles = styled.div`
   border-radius: 5px;
   line-height: 156.19%;
   margin-bottom: 5px;
-`;
+`
 
 const AddSkill = (props) => {
   const [formState, setFormState] = useState({
-    name: "",
-    classLength: "",
-    description: "",
-    teacher: "",
-  });
-  const [addSkill, { error, data }] = useMutation(ADD_TEACH_SKILL);
+    teachSkill: '',
+    classLength: '',
+    description: '',
+  })
+
+  const [addTeachSkill, { error, data }] = useMutation(ADD_TEACH_SKILL)
+
+  const { loading, data: skillData, refetch } = useQuery(QUERY_SKILLS)
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
+    const { name, value } = event.target
     setFormState({
       ...formState,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
+    event.preventDefault()
+    console.log('newdata', formState)
+    console.log(skillData)
 
     try {
-      const { data } = await addSkill({
+      const { data } = await addTeachSkill({
         variables: { ...formState },
-      });
-
-      Auth.login(data.addSkill.token);
+      })
+      refetch()
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  };
+  }
 
   return (
     <Styles>
-      {data ? (
-        console.log("Skill Added Successfully")
-      ) : (
-        <>
-          <h1 className="heading">Add Skill</h1>
-          <form onSubmit={handleFormSubmit}>
-            <input
-              className="form-input"
-              placeholder="Your new Skill"
-              name="name"
-              type="text"
-              value={formState.name}
-              onChange={handleChange}
-            />
-            <input
-              className="form-input"
-              placeholder="Class length"
-              name="classLength"
-              type="text"
-              value={formState.classLength}
-              onChange={handleChange}
-            />
-            <textarea
-              className="form-input"
-              placeholder="Description"
-              name="description"
-              type="text"
-              rows="6"
-              cols="50"
-              value={formState.description}
-              onChange={handleChange}
-            />
-            <button
-              className="submitButton"
-              style={{ cursor: "pointer" }}
-              type="submit"
-            >
-              ADD
-            </button>
-            {/* <button
+      <>
+        <h1 className="heading">Add Skill</h1>
+        <form onSubmit={handleFormSubmit}>
+          <input
+            className="form-input"
+            placeholder="Your new Skill"
+            name="teachSkill"
+            type="text"
+            value={formState.teachSkill}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input"
+            placeholder="Class length"
+            name="classLength"
+            type="text"
+            value={formState.classLength}
+            onChange={handleChange}
+          />
+          <textarea
+            className="form-input"
+            placeholder="Description"
+            name="description"
+            type="text"
+            rows="6"
+            cols="50"
+            value={formState.description}
+            onChange={handleChange}
+          />
+          <button
+            className="submitButton"
+            style={{ cursor: 'pointer' }}
+            type="submit"
+          >
+            ADD
+          </button>
+          {/* <button
               className="submitButton"
               style={{ cursor: 'pointer' }}
               onClick={() => {
@@ -176,13 +176,13 @@ const AddSkill = (props) => {
             >
               Cancel
             </button> */}
-          </form>
-        </>
-      )}
+          {data && <div className="">abc</div>}
+        </form>
+      </>
 
       {error && <div className="error">{error.message}</div>}
     </Styles>
-  );
-};
+  )
+}
 
-export default AddSkill;
+export default AddSkill

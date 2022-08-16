@@ -1,13 +1,16 @@
 const db = require("../config/connection");
 const { User } = require("../models");
 const { Skill } = require("../models");
+const { Booktime } = require("../models");
 const userSeeds = require("./userSeeds.json");
 const skillSeeds = require("./skillSeeds.json");
+const bookTimeSeeds = require("./bookTimeSeeds.json");
 
 db.once("open", async () => {
   try {
     await User.deleteMany({});
     await Skill.deleteMany({});
+    await Booktime.deleteMany({});
 
     await User.create(userSeeds);
 
@@ -32,6 +35,12 @@ db.once("open", async () => {
         );
       });
     }
+    // for (let i = 0; i < bookTimeSeeds.length; i++) {
+    //   const { _id } = await Booktime.create(bookTimeSeeds[i]);
+    //   const skillTimes = await Skill.findOneAndUpdate({
+
+    //   })
+    // }
   } catch (err) {
     console.error(err);
     process.exit(1);

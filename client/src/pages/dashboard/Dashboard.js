@@ -15,10 +15,6 @@ const Dashboard = () => {
   }
 
   const skillsData = data?.skills || {};
-  let SKILLS = [];
-  skillsData.forEach((skill) => {
-    SKILLS.push(skill.name);
-  });
 
   return (
     <>

@@ -38,15 +38,18 @@ export const ADD_LEARN_SKILL = gql`
 `
 
 export const ADD_TEACH_SKILL = gql`
-  mutation addTeachSkill($teachSkill: String!) {
-    addTeachSkill(teachSkill: $teachSkill) {
-      email
-      teachSkill {
-        name
-        classLength
-        description
-        teacher
-      }
+  mutation addTeachSkill(
+    $teachSkill: String!
+    $classLength: String!
+    $description: String!
+  ) {
+    addTeachSkill(
+      teachSkill: $teachSkill
+      classLength: $classLength
+      description: $description
+    ) {
+      _id
+      username
     }
   }
 `

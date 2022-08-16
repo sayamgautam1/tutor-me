@@ -1,5 +1,5 @@
 const User = require("./User");
 const Skill = require("./Skill");
-const BookTime = require("./Booktime");
+const Booktime = require("./Booktime");
 
-module.exports = { User, Skill, BookTime };
+module.exports = { User, Skill, Booktime };

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { StyledSection, SkillSection } from "../allSkills/AllSkills-Style";
-import styled from "styled-components";
-import { QUERY_SKILLS } from "../../utils/queries";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { useQuery } from '@apollo/client'
+import { StyledSection, SkillSection } from '../allSkills/AllSkills-Style'
+import styled from 'styled-components'
+import { QUERY_SKILLS } from '../../utils/queries'
+import { Link } from 'react-router-dom'
 
 const SearchBarStyle = styled.div`
   width: 100%;
@@ -39,7 +39,7 @@ const SearchBarStyle = styled.div`
     display: flex;
     justify-content: space-between;
   }
-`;
+`
 
 // const SKILLS = [
 //   'How to disagree with someone',
@@ -56,29 +56,29 @@ const SearchBarStyle = styled.div`
 // ]
 
 const SearchBar = ({ SKILLS }) => {
-  console.log(SKILLS);
+  console.log(SKILLS)
   // the value of the search field
-  const [name, setName] = useState("");
+  const [name, setName] = useState('')
 
   // the search result
-  const [foundSkills, setFoundSkills] = useState("");
+  const [foundSkills, setFoundSkills] = useState('')
 
   const filter = (e) => {
-    const keyword = e.target.value;
+    const keyword = e.target.value
 
-    if (keyword !== "") {
+    if (keyword !== '') {
       const results = SKILLS.filter((skills) => {
-        return skills.name.toLowerCase().startsWith(keyword.toLowerCase());
+        return skills.name.toLowerCase().startsWith(keyword.toLowerCase())
         // Use the toLowerCase() method to make it case-insensitive
-      });
-      setFoundSkills(results);
+      })
+      setFoundSkills(results)
     } else {
-      setFoundSkills("");
+      setFoundSkills('')
       // If the text field is empty, show all users
     }
 
-    setName(keyword);
-  };
+    setName(keyword)
+  }
 
   return (
     <SearchBarStyle>
@@ -107,7 +107,7 @@ const SearchBar = ({ SKILLS }) => {
                       {skill.name}
                     </h3>
 
-                    {console.log("searched skill", skill)}
+                    {console.log('searched skill', skill)}
                     <p className="grid__item__label">
                       {skill.teacher.username}
                     </p>
@@ -120,10 +120,10 @@ const SearchBar = ({ SKILLS }) => {
                   </div>
                 </li>
               ))
-            : ""}
+            : ''}
         </SkillSection>
       </StyledSection>
     </SearchBarStyle>
-  );
-};
-export default SearchBar;
+  )
+}
+export default SearchBar

@@ -42,7 +42,6 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addLearnSkill(learnSkill: String!): User
     addTeachSkill(teachSkill: String!): User
-    addClass(timeId: ID!): User
   }
 `;
 
