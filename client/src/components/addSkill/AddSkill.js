@@ -42,6 +42,16 @@ const Styles = styled.div`
    margin-bottom: 5px;
    height:50px;
  }
+ .form-input{
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  height:50px;
+
+ }
 
  label {
    color: #3d3d3d;
@@ -139,11 +149,13 @@ const AddSkill = (props) => {
               value={formState.classLength}
               onChange={handleChange}
             />
-            <input
+            <textarea
               className="form-input"
               placeholder="Description"
               name="description"
               type="text"
+              rows="6"
+              cols="50"
               value={formState.description}
               onChange={handleChange}
             />
