@@ -15,7 +15,6 @@ const Dashboard = () => {
   }
 
   const skillsData = data?.skills || {}
-  console.log(skillsData)
   let SKILLS = []
   skillsData.forEach((skill) => {
     SKILLS.push(skill.name)
@@ -28,10 +27,11 @@ const Dashboard = () => {
 
       <Row>
         <Left>
-          <AddSkill /> <AllSkills skills={skillsData} />
+          <AddSkill />
+          {/* <AllSkills skills={skillsData} /> */}
         </Left>
         <Right>
-          <SearchBar SKILLS={SKILLS} />
+          <SearchBar SKILLS={skillsData} />
         </Right>
       </Row>
     </Layout>

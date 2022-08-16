@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useQuery } from '@apollo/client'
-
+import { StyledSection, SkillSection } from '../allSkills/AllSkills-Style'
 import styled from 'styled-components'
 import { QUERY_SKILLS } from '../../utils/queries'
+import { Link } from 'react-router-dom'
 
 const SearchBarStyle = styled.div`
   .container {
@@ -57,6 +58,7 @@ const SearchBarStyle = styled.div`
 // ]
 
 const SearchBar = ({ SKILLS }) => {
+  console.log(SKILLS)
   // the value of the search field
   const [name, setName] = useState('')
 
@@ -68,7 +70,7 @@ const SearchBar = ({ SKILLS }) => {
 
     if (keyword !== '') {
       const results = SKILLS.filter((skills) => {
-        return skills.toLowerCase().startsWith(keyword.toLowerCase())
+        return skills.name.toLowerCase().startsWith(keyword.toLowerCase())
         // Use the toLowerCase() method to make it case-insensitive
       })
       setFoundSkills(results)
@@ -91,19 +93,43 @@ const SearchBar = ({ SKILLS }) => {
           className="input"
           placeholder="Search our skills"
         />
+        <StyledSection>
+          <SkillSection>
+            <div>
+              {foundSkills && foundSkills.length > 0 ? (
+                foundSkills.map((skill) => (
+                  <li className="grid__item" key={skill._id}>
+                    <div className="grid__item__inner">
+                      <div className="grid__item__img">
+                        <img
+                          src={`https://avatars.dicebear.com/api/gridy/${skill.name}.svg`}
+                          alt={skill.name}
+                        />
+                      </div>
 
-        <div className="skill-list">
-          {foundSkills && foundSkills.length > 0 ? (
-            foundSkills.map((skill) => (
-              <li key={skill} className="skill">
-                <span className="skill-id">{skill}</span>
-                {/* <span className="skill-id">{skill.name}</span> */}
-              </li>
-            ))
-          ) : (
-            <h1>No results found!</h1>
-          )}
-        </div>
+                      <h3 className="grid__item__name overflow-ellipsis">
+                        {skill.name}
+                      </h3>
+
+                      {console.log('searched skill', skill)}
+                      <p className="grid__item__label">
+                        {skill.teacher.username}
+                      </p>
+                      <Link
+                        className=".section__see-all"
+                        to={`/skills/${skill._id}`}
+                      >
+                        Learn More
+                      </Link>
+                    </div>
+                  </li>
+                ))
+              ) : (
+                <h1>No results found!</h1>
+              )}
+            </div>
+          </SkillSection>
+        </StyledSection>
       </div>
     </SearchBarStyle>
   )
