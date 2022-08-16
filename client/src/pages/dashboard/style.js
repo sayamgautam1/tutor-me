@@ -56,11 +56,13 @@ export const Row = styled.div`
 
 export const Left = styled.div`
   flex: 100%;
+  padding: 10px;
   @media (min-width: 900px) {
     flex: 40%;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    height: 150px;
   }
 `;
 

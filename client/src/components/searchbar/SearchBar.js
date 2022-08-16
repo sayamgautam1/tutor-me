@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
-import { useQuery } from '@apollo/client'
-import { StyledSection, SkillSection } from '../allSkills/AllSkills-Style'
-import styled from 'styled-components'
-import { QUERY_SKILLS } from '../../utils/queries'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { StyledSection, SkillSection } from "../allSkills/AllSkills-Style";
+import styled from "styled-components";
+import { QUERY_SKILLS } from "../../utils/queries";
+import { Link } from "react-router-dom";
 
 const SearchBarStyle = styled.div`
-  .container {
-    padding-top: 30px;
-    width: 300px;
-    margin: auto;
-  }
+  width: 100%;
+
   .heading {
     border-bottom: 1px solid white;
     color: #ff6464;
@@ -23,11 +20,12 @@ const SearchBarStyle = styled.div`
   }
   .input {
     padding: 10px;
-    width: 300px;
+    width: 100%;
     background-color: rgb(237, 232, 226);
     border-radius: 10px;
     box-shadow: 0px 0px 35px -7px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    margin-bottom: 10px;
   }
 
   .skill-list {
@@ -41,7 +39,7 @@ const SearchBarStyle = styled.div`
     display: flex;
     justify-content: space-between;
   }
-`
+`;
 
 // const SKILLS = [
 //   'How to disagree with someone',
@@ -58,80 +56,74 @@ const SearchBarStyle = styled.div`
 // ]
 
 const SearchBar = ({ SKILLS }) => {
-  console.log(SKILLS)
+  console.log(SKILLS);
   // the value of the search field
-  const [name, setName] = useState('')
+  const [name, setName] = useState("");
 
   // the search result
-  const [foundSkills, setFoundSkills] = useState('')
+  const [foundSkills, setFoundSkills] = useState("");
 
   const filter = (e) => {
-    const keyword = e.target.value
+    const keyword = e.target.value;
 
-    if (keyword !== '') {
+    if (keyword !== "") {
       const results = SKILLS.filter((skills) => {
-        return skills.name.toLowerCase().startsWith(keyword.toLowerCase())
+        return skills.name.toLowerCase().startsWith(keyword.toLowerCase());
         // Use the toLowerCase() method to make it case-insensitive
-      })
-      setFoundSkills(results)
+      });
+      setFoundSkills(results);
     } else {
-      setFoundSkills('')
+      setFoundSkills("");
       // If the text field is empty, show all users
     }
 
-    setName(keyword)
-  }
+    setName(keyword);
+  };
 
   return (
     <SearchBarStyle>
-      <div className="container">
-        <h1 className="heading">Search Skill</h1>
-        <input
-          type="search"
-          value={name}
-          onChange={filter}
-          className="input"
-          placeholder="Search our skills"
-        />
-        <StyledSection>
-          <SkillSection>
-            <div>
-              {foundSkills && foundSkills.length > 0 ? (
-                foundSkills.map((skill) => (
-                  <li className="grid__item" key={skill._id}>
-                    <div className="grid__item__inner">
-                      <div className="grid__item__img">
-                        <img
-                          src={`https://avatars.dicebear.com/api/gridy/${skill.name}.svg`}
-                          alt={skill.name}
-                        />
-                      </div>
-
-                      <h3 className="grid__item__name overflow-ellipsis">
-                        {skill.name}
-                      </h3>
-
-                      {console.log('searched skill', skill)}
-                      <p className="grid__item__label">
-                        {skill.teacher.username}
-                      </p>
-                      <Link
-                        className=".section__see-all"
-                        to={`/skills/${skill._id}`}
-                      >
-                        Learn More
-                      </Link>
+      <h1 className="heading">Search Skill</h1>
+      <input
+        type="search"
+        value={name}
+        onChange={filter}
+        className="input"
+        placeholder="Search our skills"
+      />
+      <StyledSection>
+        <SkillSection>
+          {foundSkills && foundSkills.length > 0
+            ? foundSkills.map((skill) => (
+                <li className="grid__item" key={skill._id}>
+                  <div className="grid__item__inner">
+                    <div className="grid__item__img">
+                      <img
+                        src={`https://avatars.dicebear.com/api/gridy/${skill.name}.svg`}
+                        alt={skill.name}
+                      />
                     </div>
-                  </li>
-                ))
-              ) : (
-                <h1>No results found!</h1>
-              )}
-            </div>
-          </SkillSection>
-        </StyledSection>
-      </div>
+
+                    <h3 className="grid__item__name overflow-ellipsis">
+                      {skill.name}
+                    </h3>
+
+                    {console.log("searched skill", skill)}
+                    <p className="grid__item__label">
+                      {skill.teacher.username}
+                    </p>
+                    <Link
+                      className=".section__see-all"
+                      to={`/skills/${skill._id}`}
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </li>
+              ))
+            : ""}
+        </SkillSection>
+      </StyledSection>
     </SearchBarStyle>
-  )
-}
-export default SearchBar
+  );
+};
+export default SearchBar;

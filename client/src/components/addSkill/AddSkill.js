@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { useMutation } from '@apollo/client'
-import { ADD_TEACH_SKILL } from '../../utils/mutations'
-import Auth from '../../utils/auth'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { useMutation } from "@apollo/client";
+import { ADD_TEACH_SKILL } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 const Styles = styled.div`
  
- padding: 10px;
+ padding: 15px;
  height: 50%
  margin-top: 50px;
 
@@ -80,45 +80,45 @@ const Styles = styled.div`
   border-radius: 5px;
   line-height: 156.19%;
   margin-bottom: 5px;
-`
+`;
 
 const AddSkill = (props) => {
   const [formState, setFormState] = useState({
-    name: '',
-    classLength: '',
-    description: '',
-    teacher: '',
-  })
-  const [addSkill, { error, data }] = useMutation(ADD_TEACH_SKILL)
+    name: "",
+    classLength: "",
+    description: "",
+    teacher: "",
+  });
+  const [addSkill, { error, data }] = useMutation(ADD_TEACH_SKILL);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
 
     setFormState({
       ...formState,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault()
-    console.log(formState)
+    event.preventDefault();
+    console.log(formState);
 
     try {
       const { data } = await addSkill({
         variables: { ...formState },
-      })
+      });
 
-      Auth.login(data.addSkill.token)
+      Auth.login(data.addSkill.token);
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
-  }
+  };
 
   return (
     <Styles>
       {data ? (
-        console.log('Skill Added Successfully')
+        console.log("Skill Added Successfully")
       ) : (
         <>
           <h1 className="heading">Add Skill</h1>
@@ -149,7 +149,7 @@ const AddSkill = (props) => {
             />
             <button
               className="submitButton"
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
               type="submit"
             >
               ADD
@@ -170,7 +170,7 @@ const AddSkill = (props) => {
 
       {error && <div className="error">{error.message}</div>}
     </Styles>
-  )
-}
+  );
+};
 
-export default AddSkill
+export default AddSkill;
