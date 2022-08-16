@@ -1,7 +1,16 @@
 import React from "react";
 import Hamburger from "../../components/hamburger/Hamburger";
 import Header from "../../components/header/Header";
-import { Layout, StyledHeader } from "./SingleSkill-style";
+import {
+  Layout,
+  StyledHeader,
+  Left,
+  Right,
+  RowSpacer,
+  TimeSlotsStyle,
+} from "./SingleSkill-style";
+import Container from "../../components/container/Container";
+import Paragraph from "../../components/Paragraph";
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -23,6 +32,7 @@ const SingleSkill = () => {
   }
   return (
     <>
+      {console.log(skill.availTimes)}
       <Header />
       <Hamburger />
       <Layout>
@@ -42,6 +52,41 @@ const SingleSkill = () => {
             </div>
           </div>
         </StyledHeader>
+        <RowSpacer />
+        <Container>
+          <Left>
+            <Paragraph>
+              What is an example of a paragraph? A good example of a paragraph
+              contains a topic sentence, details and a conclusion. 'There are
+              many different kinds of animals that live in China. Tigers and
+              leopards are animals that live in China's forests in the north
+            </Paragraph>
+          </Left>
+          <Right>
+            <h1>Current classes</h1>
+            <TimeSlotsStyle>
+              <div className="container">
+                <div className="time-list">
+                  {skill.availTimes && skill.availTimes.length > 0 ? (
+                    skill.availTimes.map((time) => (
+                      <li key={time} className="time">
+                        <span className="skill-id">
+                          start-time:{Date.now(time.startTime)}
+                        </span>
+                        -{" "}
+                        <span className="skill-id">
+                          end-time: {time.endTime}
+                        </span>
+                      </li>
+                    ))
+                  ) : (
+                    <h1>No results found!</h1>
+                  )}
+                </div>
+              </div>
+            </TimeSlotsStyle>
+          </Right>
+        </Container>
       </Layout>
     </>
   );
