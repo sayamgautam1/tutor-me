@@ -47,6 +47,10 @@ export const QUERY_SINGLE_SKILL = gql`
         username
         email
       }
+      availTimes {
+        startTime
+        endTime
+      }
     }
   }
 `;

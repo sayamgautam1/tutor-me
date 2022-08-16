@@ -5,11 +5,14 @@ import { breakpoints } from "../../components/Media";
 export const Left = styled.div`
   flex: 100%;
   @media (min-width: 900px) {
-    flex: 50%;
+    text-align: start;
+    flex: 40%;
     height: 100%;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    margin-right: 10px;
+    padding: 10px;
   }
 `;
 
@@ -22,6 +25,8 @@ export const Right = styled.div`
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    justify-contents: center;
+    
   }
 `;
 const FadeOut = keyframes`
@@ -162,5 +167,24 @@ export const StyledHeader = styled.header`
         font-size: 8px;
       }
     }
+  }
+`;
+
+export const TimeSlotsStyle = styled.div`
+  .container {
+    padding-top: 30px;
+    width: 100%;
+    margin: auto;
+  }
+  .time-list {
+    margin-top: 30px;
+  }
+  .time {
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
   }
 `;
