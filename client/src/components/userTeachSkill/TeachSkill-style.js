@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export const SkillSection = styled.ul`
+export const TeachSkillSection = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-gap: 12px;
 
   @media (min-width: 768px) {
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-gap: 24px;
   }
 
@@ -128,9 +128,9 @@ export const StyledSection = styled.section`
 
   .section__see-all {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     text-transform: uppercase;
-    color: #b3b3b3;
+    color: white;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.1em;

@@ -36,6 +36,7 @@ export const LearnSkillSection = styled.ul`
       &:hover,
       &:focus {
         text-decoration: none;
+        color: white;
       }
     }
   }

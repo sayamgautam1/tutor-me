@@ -6,6 +6,7 @@ import Hamburger from "../../components/hamburger/Hamburger";
 import UserHeader from "../../components/userHeader/UserHeader";
 import { Layout, RowSpacer } from "./style";
 import LearnSkill from "../../components/userLearnSkills/LearnSkill";
+import TeachSkill from "../../components/userTeachSkill/TeachSkill";
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
 
@@ -26,7 +27,7 @@ const Profile = () => {
         <h1> Learning skill</h1>
         <LearnSkill skills={profileData.learnSkill} />
         <h1> Teaching skill</h1>
-        <LearnSkill skills={profileData.learnSkill} />
+        <TeachSkill skills={profileData.teachSkill} />
       </Layout>
     </>
   );

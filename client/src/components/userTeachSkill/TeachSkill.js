@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { LearnSkillSection, StyledSection } from "./LearnSkill-style";
+import { TeachSkillSection, StyledSection } from "./TeachSkill-style";
 
-const LearnSkill = ({ skills }) => {
+const TeachSkill = ({ skills }) => {
   return (
     <StyledSection>
-      {console.log(skills)}
-      <LearnSkillSection>
+      <TeachSkillSection>
         {skills.map((skill) => (
           <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
@@ -28,9 +27,9 @@ const LearnSkill = ({ skills }) => {
             </div>
           </li>
         ))}
-      </LearnSkillSection>
+      </TeachSkillSection>
     </StyledSection>
   );
 };
 
-export default LearnSkill;
+export default TeachSkill;
