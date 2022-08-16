@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const QUERY_ME = gql`
   query Me {
@@ -17,7 +17,7 @@ export const QUERY_ME = gql`
       }
     }
   }
-`;
+`
 export const QUERY_SKILLS = gql`
   query Skills {
     skills {
@@ -35,7 +35,7 @@ export const QUERY_SKILLS = gql`
       }
     }
   }
-`;
+`
 
 export const QUERY_SINGLE_SKILL = gql`
   query Query($skillId: ID!) {
@@ -53,4 +53,4 @@ export const QUERY_SINGLE_SKILL = gql`
       }
     }
   }
-`;
+`

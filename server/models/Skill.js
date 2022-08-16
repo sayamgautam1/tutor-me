@@ -14,10 +14,12 @@ const skillSchema = new Schema({
     type: String,
     required: false,
   },
-  teacher: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-  },
+  teacher: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
   students: [
     {
       type: Schema.Types.ObjectId,
