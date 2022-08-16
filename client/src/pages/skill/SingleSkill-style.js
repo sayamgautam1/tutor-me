@@ -19,6 +19,7 @@ export const Left = styled.div`
 export const Right = styled.div`
   width:100%
   display: flex;
+  flex-direction: column;
   @media (min-width: 900px) {
     flex: 50%;
     height: 100%;
@@ -186,5 +187,6 @@ export const TimeSlotsStyle = styled.div`
     border: 1px solid white;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
   }
 `;

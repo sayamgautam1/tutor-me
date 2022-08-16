@@ -50,6 +50,7 @@ export const QUERY_SINGLE_SKILL = gql`
       availTimes {
         startTime
         endTime
+        _id
       }
     }
   }

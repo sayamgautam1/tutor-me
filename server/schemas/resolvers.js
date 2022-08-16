@@ -5,10 +5,10 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate(["teachSkill", "learnSkill", "nextClass"]);
     },
     skills: async () => {
-      return Skill.find().populate(["teacher", "students"]);
+      return Skill.find().populate(["teachSkill", "learnSkill"]);
     },
     skill: async (parent, { skillId }) => {
       return Skill.findOne({ _id: skillId }).populate(["teacher", "students"]);
@@ -17,7 +17,7 @@ const resolvers = {
       if (context.user) {
         return User.findOne({
           email: context.user.email,
-        }).populate(["learnSkill", "teachSkill"]);
+        }).populate(["teachSkill", "learnSkill", "nextClass"]);
       }
       throw new AuthenticationError("You must be signed in");
     },
@@ -63,7 +63,7 @@ const resolvers = {
             {
               new: true,
             }
-          );
+          ).populate(["teachSkill", "learnSkill", "nextClass"]);
         } else {
           const newSkill = await Skill.create({ name: learnSkill });
           console.log(newSkill);
@@ -75,7 +75,7 @@ const resolvers = {
             {
               new: true,
             }
-          ).populate("learnSkill");
+          ).populate(["teachSkill", "learnSkill", "nextClass"]);
         }
       }
       throw new AuthenticationError("Not logged in");
@@ -93,7 +93,7 @@ const resolvers = {
             {
               new: true,
             }
-          );
+          ).populate(["teachSkill", "learnSkill", "nextClass"]);
         } else {
           const newSkill = await Skill.create({ name: learnSkill });
           console.log(newSkill);
@@ -105,10 +105,26 @@ const resolvers = {
             {
               new: true,
             }
-          ).populate("teachSkill");
+          ).populate(["teachSkill", "learnSkill", "nextClass"]);
         }
       }
       throw new AuthenticationError("Not logged in");
+    },
+    addClass: async (parent, { timeId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      const skill = await Skill.find({ "availTimes._id": timeId });
+      if (!skill) {
+        throw error("invalid id");
+      }
+      return User.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $push: { nextClass: timeId }, $push: { learnSkill: skill._id } },
+        {
+          new: true,
+        }
+      ).populate(["teachSkill", "learnSkill", "nextClass"]);
     },
   },
 };

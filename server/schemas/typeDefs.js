@@ -8,6 +8,7 @@ const typeDefs = gql`
     name: String
     teachSkill: [Skill]
     learnSkill: [Skill]
+    nextClass: [ClassTime]
   }
 
   type Skill {
@@ -16,9 +17,10 @@ const typeDefs = gql`
     classLength: Int
     teacher: User
     students: [User]
-    availTimes: [SkillTime]
+    availTimes: [ClassTime]
   }
-  type SkillTime {
+  type ClassTime {
+    _id: ID
     startTime: String
     endTime: String
   }
@@ -40,6 +42,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addLearnSkill(learnSkill: String!): User
     addTeachSkill(teachSkill: String!): User
+    addClass(timeId: ID!): User
   }
 `;
 
