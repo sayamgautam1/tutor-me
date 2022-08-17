@@ -8,16 +8,20 @@ const resolvers = {
       return User.find();
     },
     skills: async () => {
-      return Skill.find().populate(["teacher", "students"]);
+      return Skill.find().populate(["teacher", "students", "availTimes"]);
     },
     skill: async (parent, { skillId }) => {
-      return Skill.findOne({ _id: skillId }).populate(["teacher", "students"]);
+      return Skill.findOne({ _id: skillId }).populate([
+        "teacher",
+        "students",
+        "availTimes",
+      ]);
     },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({
           email: context.user.email,
-        }).populate(["learnSkill", "teachSkill"]);
+        }).populate(["learnSkill", "teachSkill", "nextClass"]);
       }
       throw new AuthenticationError("You must be signed in");
     },
