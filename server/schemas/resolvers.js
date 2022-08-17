@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Skill } = require("../models");
+const { User, Skill, Booktime } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -117,6 +117,25 @@ const resolvers = {
         }
       }
       throw new AuthenticationError("Not logged in");
+    },
+    addClass: async (parent, { classId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      const time = await Booktime.findOne({ _id: classId });
+      console.log(time);
+      if (!time) {
+        throw new console.error("no time availabe");
+      }
+      const skill = await Skill.findOne({ availTimes: classId });
+      console.log(skill);
+      return User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $push: { nextClass: time._id }, $push: { learnSkill: skill._id } },
+        {
+          new: true,
+        }
+      ).populate(["nextClass"]);
     },
   },
 };
