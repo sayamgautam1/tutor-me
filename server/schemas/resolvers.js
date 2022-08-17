@@ -137,12 +137,12 @@ const resolvers = {
         }
       ).populate(['nextClass'])
     },
-    removeTeacher: async (parent, { userId, skillId }, context) => {
+    removeTeachSkill: async (parent, { skillId }, context) => {
       if (!context.user) {
         throw new AuthenticationError('Not logged in')
       }
       return User.findOneAndUpdate(
-        { _id: userId },
+        { _id: context.user._id },
         { $pull: { teachSkill: { _id: skillId } } },
         { new: true }
       )

@@ -1,10 +1,10 @@
-import StyledHeader from "./UserHeader-Style";
-import image from "../../shared/images/image-victor.jpg";
-import { createAvatar } from "@dicebear/avatars";
-import * as style from "@dicebear/avatars-identicon-sprites";
+import StyledHeader from './UserHeader-Style'
+import image from '../../shared/images/image-victor.jpg'
+import { createAvatar } from '@dicebear/avatars'
+import * as style from '@dicebear/avatars-identicon-sprites'
 
 const UserHeader = ({ data }) => {
-  let svg = createAvatar(style);
+  let svg = createAvatar(style)
   return (
     <>
       <StyledHeader type="user">
@@ -15,7 +15,7 @@ const UserHeader = ({ data }) => {
             alt="Avatar"
           />
           <div>
-            <div className="header__overline">{"Welcome"}</div>
+            <div className="header__overline">{'Welcome'}</div>
             <h1 className="header__name">{data.username.toUpperCase()}</h1>
             <p className="header__meta">
               <span>{data.email}</span>
@@ -24,7 +24,7 @@ const UserHeader = ({ data }) => {
         </div>
       </StyledHeader>
     </>
-  );
-};
+  )
+}
 
-export default UserHeader;
+export default UserHeader

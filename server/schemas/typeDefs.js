@@ -43,7 +43,7 @@ const typeDefs = gql`
     addLearnSkill(learnSkill: String!): User
     addTeachSkill(teachSkill: String!): User
     addClass(classId: ID!): User
-    removeTeacher(userId: ID!, skillId: ID!): User
+    removeTeachSkill(skillId: ID!): User
   }
 `
 

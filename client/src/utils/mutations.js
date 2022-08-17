@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const ADD_USER = gql`
   mutation AddUser($username: String!, $email: String!, $password: String!) {
@@ -11,7 +11,7 @@ export const ADD_USER = gql`
       }
     }
   }
-`;
+`
 
 export const LOGIN_USER = gql`
   mutation Login($email: String!, $password: String!) {
@@ -24,7 +24,7 @@ export const LOGIN_USER = gql`
       }
     }
   }
-`;
+`
 
 export const ADD_LEARN_SKILL = gql`
   mutation addLearnSkill($learnSkill: String!) {
@@ -35,7 +35,7 @@ export const ADD_LEARN_SKILL = gql`
       }
     }
   }
-`;
+`
 
 export const ADD_TEACH_SKILL = gql`
   mutation addTeachSkill(
@@ -52,7 +52,7 @@ export const ADD_TEACH_SKILL = gql`
       username
     }
   }
-`;
+`
 export const ADD_CLASS_TIME = gql`
   mutation addClass($classId: ID!) {
     addClass(classId: $classId) {
@@ -63,4 +63,22 @@ export const ADD_CLASS_TIME = gql`
       }
     }
   }
-`;
+`
+export const REMOVE_SKILL = gql`
+  mutation removeTeachSkill($skillId: ID!, $userId: ID!) {
+    removeTeachSkill(skillId: $skillId) {
+      _id
+      name
+      skills
+    }
+  }
+`
+// export const REMOVE_SKILL = gql`
+//   mutation removeTeachSkill($skillId: ID!) {
+//     removeTeachSkill(skillId: $skillId) {
+//       _id
+//       name
+//       skills
+//     }
+//   }
+// `
