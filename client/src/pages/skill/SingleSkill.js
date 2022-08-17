@@ -11,6 +11,7 @@ import {
 } from "./SingleSkill-style";
 import Container from "../../components/container/Container";
 import Paragraph from "../../components/Paragraph";
+import TimeSlots from "./TimeSlots";
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -30,9 +31,7 @@ const SingleSkill = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  const addTimeSlot = (id) => {
-    console.log(id);
-  };
+
   return (
     <>
       {console.log(skill.availTimes)}
@@ -67,41 +66,7 @@ const SingleSkill = () => {
           </Left>
           <Right>
             <h1>Current classes</h1>
-            <TimeSlotsStyle>
-              <div className="container">
-                <div className="time-list">
-                  {skill.availTimes && skill.availTimes.length > 0 ? (
-                    skill.availTimes.map((time) => (
-                      <li
-                        key={time}
-                        className="time"
-                        onClick={() => addTimeSlot(time._id)}
-                      >
-                        <span className="skill-id">
-                          start-time:
-                          {` ${new Date(
-                            parseInt(time.startTime)
-                          ).toLocaleDateString("en-GB")} ${new Date(
-                            parseInt(time.startTime)
-                          ).toLocaleTimeString("en-GB")}`}
-                        </span>
-
-                        <span className="skill-id">
-                          end-time:
-                          {` ${new Date(
-                            parseInt(time.endTime)
-                          ).toLocaleDateString("en-GB")} ${new Date(
-                            parseInt(time.endTime)
-                          ).toLocaleTimeString("en-GB")}`}
-                        </span>
-                      </li>
-                    ))
-                  ) : (
-                    <h1>No timeslots available!</h1>
-                  )}
-                </div>
-              </div>
-            </TimeSlotsStyle>
+            <TimeSlots classTime={skill.availTimes} />
           </Right>
         </Container>
       </Layout>
