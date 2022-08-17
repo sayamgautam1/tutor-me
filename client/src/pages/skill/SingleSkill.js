@@ -30,6 +30,9 @@ const SingleSkill = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  const addTimeSlot = (id) => {
+    console.log(id);
+  };
   return (
     <>
       {console.log(skill.availTimes)}
@@ -69,18 +72,32 @@ const SingleSkill = () => {
                 <div className="time-list">
                   {skill.availTimes && skill.availTimes.length > 0 ? (
                     skill.availTimes.map((time) => (
-                      <li key={time} className="time">
+                      <li
+                        key={time}
+                        className="time"
+                        onClick={() => addTimeSlot(time._id)}
+                      >
                         <span className="skill-id">
-                          start-time:{Date.now(time.startTime)}
+                          start-time:
+                          {` ${new Date(
+                            parseInt(time.startTime)
+                          ).toLocaleDateString("en-GB")} ${new Date(
+                            parseInt(time.startTime)
+                          ).toLocaleTimeString("en-GB")}`}
                         </span>
-                        -{" "}
+
                         <span className="skill-id">
-                          end-time: {time.endTime}
+                          end-time:
+                          {` ${new Date(
+                            parseInt(time.endTime)
+                          ).toLocaleDateString("en-GB")} ${new Date(
+                            parseInt(time.endTime)
+                          ).toLocaleTimeString("en-GB")}`}
                         </span>
                       </li>
                     ))
                   ) : (
-                    <h1>No results found!</h1>
+                    <h1>No timeslots available!</h1>
                   )}
                 </div>
               </div>

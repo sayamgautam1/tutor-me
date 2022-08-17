@@ -5,7 +5,8 @@
     "email": "elliot@email.com",
     "password": "password01",
     "age": "33",
-    "location": "Adelaide"
+    "location": "Adelaide",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f6e",
@@ -13,7 +14,8 @@
     "email": "dory@email.com",
     "password": "password01",
     "age": "39",
-    "location": "Melbourne"
+    "location": "Melbourne",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f6c",
@@ -21,7 +23,8 @@
     "email": "drew@email.com",
     "password": "password01",
     "age": "13",
-    "location": "Sydney"
+    "location": "Sydney",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f6d",
@@ -29,7 +32,8 @@
     "email": "portia@email.com",
     "password": "password01",
     "age": "23",
-    "location": "Brisbane"
+    "location": "Brisbane",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f70",
@@ -37,7 +41,8 @@
     "email": "troy@email.com",
     "password": "password01",
     "age": "53",
-    "location": "Detroit"
+    "location": "Detroit",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f71",
@@ -45,7 +50,8 @@
     "email": "meghan@email.com",
     "password": "password01",
     "age": "25",
-    "location": "Chicago"
+    "location": "Chicago",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f79",
@@ -53,7 +59,8 @@
     "email": "nancy@email.com",
     "password": "password01",
     "age": "93",
-    "location": "Tokyo"
+    "location": "Tokyo",
+    "nextClass": []
   },
   {
     "_id": "62fa0fbddd7dc403e53d9f72",
@@ -61,6 +68,7 @@
     "email": "asuna@email.com",
     "password": "password01",
     "age": "20",
-    "location": "Ayer's Rock"
+    "location": "Ayer's Rock",
+    "nextClass": []
   }
 ]

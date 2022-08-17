@@ -1,5 +1,13 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 
+const timeSchema = new Schema({
+  startTime: {
+    type: Date,
+  },
+  endTime: {
+    type: Date,
+  },
+});
 const skillSchema = new Schema({
   name: {
     type: String,
@@ -17,27 +25,23 @@ const skillSchema = new Schema({
   teacher: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
   ],
   students: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
   ],
   availTimes: [
-    new Schema({
-      startTime: {
-        type: Date,
-      },
-      endTime: {
-        type: Date,
-      },
-    }),
+    {
+      type: Schema.Types.ObjectId,
+      ref: "BookTime",
+    },
   ],
-})
+});
 
-const Skill = model('Skill', skillSchema)
+const Skill = model("Skill", skillSchema);
 
-module.exports = Skill
+module.exports = Skill;
