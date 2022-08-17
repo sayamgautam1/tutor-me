@@ -11,6 +11,8 @@ const app = express()
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  csrfPrevention: true,
+  cache: 'bounded',
   context: authMiddleware,
   // These two lines below enable the playground when deployed to heroku. You can remove them if you don't want this functionality
   introspection: true,
@@ -31,7 +33,13 @@ app.get('/', (req, res) => {
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start()
-  server.applyMiddleware({ app })
+  server.applyMiddleware({
+    app,
+    cors: {
+      origin: ['https://studio.apollographql.com'],
+      credentials: true,
+    },
+  })
 
   db.once('open', () => {
     app.listen(PORT, () => {
