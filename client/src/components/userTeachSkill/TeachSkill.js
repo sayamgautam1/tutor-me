@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import RemoveTeacher from '../removeTeacher/removeTeacher'
 
-import { TeachSkillSection, StyledSection } from "./TeachSkill-style";
+import { TeachSkillSection, StyledSection } from './TeachSkill-style'
 
 const TeachSkill = ({ skills }) => {
   return (
@@ -10,6 +11,7 @@ const TeachSkill = ({ skills }) => {
         {skills.map((skill) => (
           <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
+              <RemoveTeacher />
               <div className="grid__item__img">
                 <img
                   src={`https://avatars.dicebear.com/api/gridy/${skill.name}.svg`}
@@ -29,7 +31,7 @@ const TeachSkill = ({ skills }) => {
         ))}
       </TeachSkillSection>
     </StyledSection>
-  );
-};
+  )
+}
 
-export default TeachSkill;
+export default TeachSkill

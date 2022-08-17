@@ -176,7 +176,7 @@ const AddSkill = (props) => {
             >
               Cancel
             </button> */}
-          {data && <div className="">abc</div>}
+          {data && <div className="">Skill Added</div>}
         </form>
       </>
 
