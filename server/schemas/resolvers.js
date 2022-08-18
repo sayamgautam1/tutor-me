@@ -123,20 +123,39 @@ const resolvers = {
         throw new AuthenticationError("Not logged in");
       }
       const time = await Booktime.findOne({ _id: classId });
-      console.log(time);
+
       if (!time) {
         throw new console.error("no time availabe");
       }
       const skill = await Skill.findOne({ availTimes: classId });
-      if (!skillExists) {
+
+      const user = await User.findOne({
+        _id: context.user._id,
+      });
+      userLearnSkill = user.learnSkill;
+
+      const userSkillExists = userLearnSkill.includes(skill._id);
+
+      if (userSkillExists) {
         //check to skill exists // if not create it// after add id
         return User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { teachSkill: skillExists._id } },
+          { $push: { nextClass: time._id } },
           {
             new: true,
           }
-        );
+        ).populate("nextClass");
+      } else {
+        return User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $push: { learnSkill: skill._id, nextClass: time._id },
+            // $push: { nextClass: time._id },
+          },
+          {
+            new: true,
+          }
+        ).populate(["learnSkill", "nextClass"]);
       }
     },
     removeTeachSkill: async (parent, { skillId }, context) => {
