@@ -9,6 +9,5 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 )
-git
 
 module.exports = mongoose.connection
