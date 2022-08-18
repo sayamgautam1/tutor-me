@@ -137,3 +137,16 @@ export const StyledSection = styled.section`
     padding-bottom: 2px;
   }
 `;
+
+export const Styles = styled.div`
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  button {
+    background-color: #ff6464;
+    padding: 5px;
+    font-weight: 600;
+  }
+`;
