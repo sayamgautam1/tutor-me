@@ -143,7 +143,7 @@ const resolvers = {
       }
       return User.findOneAndUpdate(
         { _id: context.user._id },
-        { $pull: { teachSkill: { _id: skillId } } },
+        { $pull: { teachSkill: skillId } },
         { new: true }
       )
     },

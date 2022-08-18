@@ -65,11 +65,10 @@ export const ADD_CLASS_TIME = gql`
   }
 `
 export const REMOVE_SKILL = gql`
-  mutation removeTeachSkill($skillId: ID!, $userId: ID!) {
+  mutation Mutation($skillId: ID!) {
     removeTeachSkill(skillId: $skillId) {
-      _id
-      name
-      skills
+      username
+      email
     }
   }
 `

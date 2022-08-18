@@ -22,7 +22,7 @@ const TeachSkill = ({ skills, isLoggedInUser = false }) => {
   const handleRemoveSkill = async (skill) => {
     try {
       const { data } = await removeTeachSkill({
-        variables: { skill },
+        variables: { skillId: skill._id },
       })
     } catch (err) {
       console.error(err)
