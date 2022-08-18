@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express')
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -48,7 +48,8 @@ const typeDefs = gql`
     ): User
     addClass(classId: ID!): User
     removeTeachSkill(skillId: ID!): User
+    removeLearnSkill(skillId: ID!): User
   }
-`
+`;
 
-module.exports = typeDefs
+module.exports = typeDefs;

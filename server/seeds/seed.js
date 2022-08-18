@@ -35,12 +35,9 @@ db.once("open", async () => {
         );
       });
     }
-    // for (let i = 0; i < bookTimeSeeds.length; i++) {
-    //   const { _id } = await Booktime.create(bookTimeSeeds[i]);
-    //   const skillTimes = await Skill.findOneAndUpdate({
-
-    //   })
-    // }
+    for (let i = 0; i < bookTimeSeeds.length; i++) {
+      const { _id } = await Booktime.create(bookTimeSeeds[i]);
+    }
   } catch (err) {
     console.error(err);
     process.exit(1);
