@@ -7,6 +7,7 @@ import UserHeader from "../../components/userHeader/UserHeader";
 import { Layout, RowSpacer } from "./style";
 import LearnSkill from "../../components/userLearnSkills/LearnSkill";
 import TeachSkill from "../../components/userTeachSkill/TeachSkill";
+import NextClass from "./NextClass";
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
 
@@ -28,6 +29,11 @@ const Profile = () => {
         <LearnSkill skills={profileData.learnSkill} />
         <h1> Teaching skill</h1>
         <TeachSkill skills={profileData.teachSkill} />
+        <h1> Next Class</h1>
+        <NextClass
+          classes={profileData.nextClass}
+          skills={profileData.learnSkill}
+        />
       </Layout>
     </>
   );
