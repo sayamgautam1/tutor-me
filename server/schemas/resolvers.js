@@ -136,27 +136,32 @@ const resolvers = {
 
       const userSkillExists = userLearnSkill.includes(skill._id);
 
-      if (userSkillExists) {
-        //check to skill exists // if not create it// after add id
-        return User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { nextClass: time._id } },
-          {
-            new: true,
-          }
-        ).populate("nextClass");
-      } else {
-        return User.findByIdAndUpdate(
-          { _id: context.user._id },
-          {
-            $push: { learnSkill: skill._id, nextClass: time._id },
-            // $push: { nextClass: time._id },
-          },
-          {
-            new: true,
-          }
-        ).populate(["learnSkill", "nextClass"]);
+      const classBooked = user.nextClass.includes(time._id);
+
+      if (!classBooked) {
+        if (userSkillExists) {
+          //check to skill exists // if not create it// after add id
+          return User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { nextClass: time._id } },
+            {
+              new: true,
+            }
+          ).populate("nextClass");
+        } else {
+          return User.findByIdAndUpdate(
+            { _id: context.user._id },
+            {
+              $push: { learnSkill: skill._id, nextClass: time._id },
+              // $push: { nextClass: time._id },
+            },
+            {
+              new: true,
+            }
+          ).populate(["learnSkill", "nextClass"]);
+        }
       }
+      throw new error("class already booked");
     },
     removeTeachSkill: async (parent, { skillId }, context) => {
       if (!context.user) {
