@@ -4,7 +4,7 @@
     "classLength": "30",
     "teacher": "62fa0afa8ae7df09f05f96d5",
     "students": ["62fa0fbddd7dc403e53d9f6e", "62fa0afa8ae7df09f05f96d5"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "availTimes": ["63032fb884a8fd776db84311"]
   },
   {
     "name": "German Dancing",
@@ -60,27 +60,27 @@
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f72",
     "students": ["62fa0fbddd7dc403e53d9f71"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "availTimes": ["63032fc30cfccb94f86f6b96"]
   },
   {
     "name": "Country Dancing",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6e",
-    "students": ["62fa0fbddd7dc403e53d9f6e"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "students": ["62fa0fbddd7dc403e53d9f72"],
+    "availTimes": ["63032fccb307c81a92fab9cf"]
   },
   {
     "name": "American",
     "classLength": "30",
     "teacher": "62fa0afa8ae7df09f05f96d5",
     "students": ["62fa0fbddd7dc403e53d9f79", "62fa0fbddd7dc403e53d9f71"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "availTimes": ["63032fd59c7e2db9a06c31a5"]
   },
   {
     "name": "Llama Riding",
     "classLength": "3",
     "teacher": "62fa0fbddd7dc403e53d9f72",
     "students": ["62fa0fbddd7dc403e53d9f6e"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "availTimes": ["63032fdfd0cae2f2d6a0c57b"]
   }
 ]

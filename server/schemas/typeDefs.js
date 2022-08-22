@@ -49,6 +49,7 @@ const typeDefs = gql`
     addClass(classId: ID!): User
     removeTeachSkill(skillId: ID!): User
     removeLearnSkill(skillId: ID!): User
+    removeClass(classId: ID!): User
   }
 `;
 

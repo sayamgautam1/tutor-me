@@ -183,6 +183,16 @@ const resolvers = {
         { new: true }
       );
     },
+    removeClass: async (parent, { classId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      return User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { nextClass: classId } },
+        { new: true }
+      );
+    },
   },
 };
 

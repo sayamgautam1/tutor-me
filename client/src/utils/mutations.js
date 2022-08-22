@@ -81,3 +81,12 @@ export const REMOVE_LEARN_SKILL = gql`
     }
   }
 `;
+
+export const REMOVE_CLASS = gql`
+  mutation RemoveClass($classId: ID!) {
+    removeClass(classId: $classId) {
+      username
+      email
+    }
+  }
+`;
