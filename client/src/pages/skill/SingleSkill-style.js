@@ -176,6 +176,7 @@ export const TimeSlotsStyle = styled.div`
     padding-top: 30px;
     width: 100%;
     margin: auto;
+    cursor: pointer;
   }
   .time-list {
     margin-top: 30px;

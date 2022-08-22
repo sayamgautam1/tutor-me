@@ -4,49 +4,49 @@
     "classLength": "30",
     "teacher": "62fa0afa8ae7df09f05f96d5",
     "students": ["62fa0fbddd7dc403e53d9f6e", "62fa0afa8ae7df09f05f96d5"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff", "62fb80c8d45a0d6d610d9610"]
+    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
   },
   {
     "name": "German Dancing",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6e",
     "students": ["62fa0fbddd7dc403e53d9f6d"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff", "62fb80c8d45a0d6d610d9610"]
+    "availTimes": ["62fb80c8d45a0d6d610d9610"]
   },
   {
     "name": "English",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6d",
     "students": ["62fa0fbddd7dc403e53d9f71"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff", "62fb80c8d45a0d6d610d9610"]
+    "availTimes": ["62fb80d1da4fa74c3a1b4b3b"]
   },
   {
     "name": "Rhino Riding",
     "classLength": "3",
     "teacher": "62fa0fbddd7dc403e53d9f70",
     "students": ["62fa0fbddd7dc403e53d9f6d"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff", "62fb80c8d45a0d6d610d9610"]
+    "availTimes": ["62fb80dcac7207683df1c0a1"]
   },
   {
     "name": "Chinese Cooking",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f6e",
     "students": ["62fa0fbddd7dc403e53d9f6d", "62fa0fbddd7dc403e53d9f6e"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff", "62fb80c8d45a0d6d610d9610"]
+    "availTimes": ["62fb80e26d484e0d7aa4abdc"]
   },
   {
     "name": "Russian Dancing",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f71",
     "students": ["62fa0fbddd7dc403e53d9f71"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "availTimes": ["62fb80e709153a0478938042"]
   },
   {
     "name": "Australian Slang 101",
     "classLength": "30",
     "teacher": "62fa0fbddd7dc403e53d9f72",
     "students": ["62fa0fbddd7dc403e53d9f71", "62fa0fbddd7dc403e53d9f6e"],
-    "availTimes": ["62fb7fdc334b49d56b3b3aff"]
+    "availTimes": ["62fb80ef18f9ceb812f1e6b7"]
   },
   {
     "name": "Giraffe Riding",

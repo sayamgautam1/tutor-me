@@ -7,7 +7,6 @@ import {
   Left,
   Right,
   RowSpacer,
-  TimeSlotsStyle,
 } from "./SingleSkill-style";
 import Container from "../../components/container/Container";
 import Paragraph from "../../components/Paragraph";
@@ -46,7 +45,7 @@ const SingleSkill = () => {
               alt="Avatar"
             />
             <div>
-              <div className="header__overline">{`${skill.teacher.username} presents`}</div>
+              <div className="header__overline">{`${skill.teacher[0].username} presents`}</div>
               <h1 className="header__name">{skill.name}</h1>
               <p className="header__meta">
                 <span>{`course duration ${skill.classLength} classes`}</span>

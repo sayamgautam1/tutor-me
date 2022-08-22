@@ -1,11 +1,11 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
-  query Query {
+  query Me {
     me {
       _id
-      email
       username
+      email
       teachSkill {
         _id
         name
@@ -15,13 +15,18 @@ export const QUERY_ME = gql`
         _id
         name
         classLength
+        availTimes {
+          _id
+        }
       }
       nextClass {
         _id
+        startTime
+        endTime
       }
     }
   }
-`
+`;
 export const QUERY_SKILLS = gql`
   query Skills {
     skills {
@@ -39,7 +44,7 @@ export const QUERY_SKILLS = gql`
       }
     }
   }
-`
+`;
 
 export const QUERY_SINGLE_SKILL = gql`
   query Query($skillId: ID!) {
@@ -58,4 +63,4 @@ export const QUERY_SINGLE_SKILL = gql`
       }
     }
   }
-`
+`;
