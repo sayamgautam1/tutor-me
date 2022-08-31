@@ -103,7 +103,11 @@ const resolvers = {
             }
           );
         } else {
-          const newSkill = await Skill.create({ name: teachSkill });
+          const newSkill = await Skill.create({
+            name: teachSkill,
+            classLength: classLength,
+            description: description,
+          });
           console.log(newSkill);
           newSkill.teacher.push(context.user._id);
           await newSkill.save();
