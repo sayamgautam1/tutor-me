@@ -5,7 +5,7 @@ import {
   Styles,
 } from "../../components/userTeachSkill/TeachSkill-style";
 // [{id: x, ..rest of the skills}] => {x: {id: x}}
-import { useMutation } from "@apollo/client";
+import { makeReference, useMutation } from "@apollo/client";
 import { REMOVE_CLASS } from "../../utils/mutations";
 import { QUERY_ME } from "../../utils/queries";
 import AlertBox from "../../components/alertBox/AlertBox";
@@ -39,23 +39,10 @@ const NextClass = ({ classes, skills }) => {
           const matchedSkill = skills.find((s) =>
             s.availTimes.some((t) => time._id === t._id)
           );
-          {
-            console.log(matchedSkill);
-          }
 
-          return (
+          return matchedSkill ? (
             <li className="grid__item" key={time._id}>
               <div className="grid__item__inner">
-                {/* <Styles>
-                  <div>
-                    <button
-                      className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveClass(time)}
-                    >
-                      Remove Class
-                    </button>
-                  </div>
-                </Styles> */}
                 <AlertBox
                   onConfirm={() => handleRemoveClass(time)}
                   title="Are you sure you want to remove this allocated class"
@@ -63,6 +50,12 @@ const NextClass = ({ classes, skills }) => {
                   trigger="Remove Class"
                   skill={matchedSkill}
                 />
+                <div className="grid__item__img">
+                  <img
+                    src={`https://avatars.dicebear.com/api/gridy/${matchedSkill.name}.svg`}
+                    alt={matchedSkill.name}
+                  />
+                </div>
                 <h1 className="grid__item__name overflow-ellipsis">
                   {matchedSkill.name}
                 </h1>
@@ -85,6 +78,8 @@ const NextClass = ({ classes, skills }) => {
                 </h3>
               </div>
             </li>
+          ) : (
+            <h1>No Classes Booked</h1>
           );
         })}
       </TeachSkillSection>

@@ -39,17 +39,6 @@ const LearnSkill = ({ skills }) => {
         {skills.map((skill) => (
           <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
-              {/* <Styles>
-                <div>
-                 
-                  <button
-                    className="btn btn-sm btn-danger ml-auto"
-                    onClick={() => handleRemoveSkill(skill)}
-                  >
-                    Remove Skill
-                  </button>
-                </div>
-              </Styles> */}
               <AlertBox
                 onConfirm={() => handleRemoveSkill(skill)}
                 title="Are you sure you want to remove this skill"
