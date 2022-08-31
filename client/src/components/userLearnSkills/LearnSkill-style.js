@@ -148,5 +148,6 @@ export const Styles = styled.div`
     background-color: #ff6464;
     padding: 5px;
     font-weight: 600;
+    cursor: pointer;
   }
 `;
