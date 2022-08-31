@@ -5,6 +5,7 @@ import { LearnSkillSection, StyledSection, Styles } from "./LearnSkill-style";
 import { useMutation } from "@apollo/client";
 import { REMOVE_LEARN_SKILL } from "../../utils/mutations";
 import { QUERY_ME } from "../../utils/queries";
+import AlertBox from "../alertBox/AlertBox";
 
 const LearnSkill = ({ skills }) => {
   const [removeLearnSkill, { error }] = useMutation(REMOVE_LEARN_SKILL, {
@@ -33,12 +34,14 @@ const LearnSkill = ({ skills }) => {
   return (
     <StyledSection>
       {console.log(skills)}
+
       <LearnSkillSection>
         {skills.map((skill) => (
           <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
-              <Styles>
+              {/* <Styles>
                 <div>
+                 
                   <button
                     className="btn btn-sm btn-danger ml-auto"
                     onClick={() => handleRemoveSkill(skill)}
@@ -46,7 +49,14 @@ const LearnSkill = ({ skills }) => {
                     Remove Skill
                   </button>
                 </div>
-              </Styles>
+              </Styles> */}
+              <AlertBox
+                onConfirm={() => handleRemoveSkill(skill)}
+                title="Are you sure you want to remove this skill"
+                content={skill.name}
+                trigger="Remove Skill"
+                skill={skill}
+              />
               <div className="grid__item__img">
                 <img
                   src={`https://avatars.dicebear.com/api/gridy/${skill.name}.svg`}

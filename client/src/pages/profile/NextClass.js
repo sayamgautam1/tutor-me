@@ -38,6 +38,9 @@ const NextClass = ({ classes, skills }) => {
           const matchedSkill = skills.find((s) =>
             s.availTimes.some((t) => time._id === t._id)
           );
+          {
+            console.log(matchedSkill);
+          }
 
           return (
             <li className="grid__item" key={time._id}>
