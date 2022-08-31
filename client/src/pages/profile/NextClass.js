@@ -8,6 +8,7 @@ import {
 import { useMutation } from "@apollo/client";
 import { REMOVE_CLASS } from "../../utils/mutations";
 import { QUERY_ME } from "../../utils/queries";
+import AlertBox from "../../components/alertBox/AlertBox";
 const NextClass = ({ classes, skills }) => {
   const [removeClass, { error }] = useMutation(REMOVE_CLASS, {
     update(cache, { data: { removeClass } }) {
@@ -45,7 +46,7 @@ const NextClass = ({ classes, skills }) => {
           return (
             <li className="grid__item" key={time._id}>
               <div className="grid__item__inner">
-                <Styles>
+                {/* <Styles>
                   <div>
                     <button
                       className="btn btn-sm btn-danger ml-auto"
@@ -54,7 +55,14 @@ const NextClass = ({ classes, skills }) => {
                       Remove Class
                     </button>
                   </div>
-                </Styles>
+                </Styles> */}
+                <AlertBox
+                  onConfirm={() => handleRemoveClass(time)}
+                  title="Are you sure you want to remove this allocated class"
+                  content={matchedSkill.name}
+                  trigger="Remove Class"
+                  skill={matchedSkill}
+                />
                 <h1 className="grid__item__name overflow-ellipsis">
                   {matchedSkill.name}
                 </h1>

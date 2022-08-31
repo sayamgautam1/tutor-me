@@ -1,9 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { TeachSkillSection, StyledSection, Styles } from './TeachSkill-style'
-import { useMutation } from '@apollo/client'
-import { REMOVE_SKILL } from '../../utils/mutations'
-import { QUERY_ME } from '../../utils/queries'
+import React from "react";
+import { Link } from "react-router-dom";
+import { TeachSkillSection, StyledSection, Styles } from "./TeachSkill-style";
+import { useMutation } from "@apollo/client";
+import { REMOVE_SKILL } from "../../utils/mutations";
+import { QUERY_ME } from "../../utils/queries";
+import AlertBox from "../alertBox/AlertBox";
 
 const TeachSkill = ({ skills, isLoggedInUser = false }) => {
   const [removeTeachSkill, { error }] = useMutation(REMOVE_SKILL, {
@@ -12,22 +13,22 @@ const TeachSkill = ({ skills, isLoggedInUser = false }) => {
         cache.writeQuery({
           query: QUERY_ME,
           data: { me: removeTeachSkill },
-        })
+        });
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
     },
-  })
+  });
 
   const handleRemoveSkill = async (skill) => {
     try {
       const { data } = await removeTeachSkill({
         variables: { skillId: skill._id },
-      })
+      });
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
   return (
     <StyledSection>
       <TeachSkillSection>
@@ -35,7 +36,7 @@ const TeachSkill = ({ skills, isLoggedInUser = false }) => {
           <li className="grid__item" key={skill._id}>
             <div className="grid__item__inner">
               {/* <RemoveTeacher teachSkill={skill.teachSkill} /> */}
-              <Styles>
+              {/* <Styles>
                 <div>
                   <button
                     className="btn btn-sm btn-danger ml-auto"
@@ -44,7 +45,14 @@ const TeachSkill = ({ skills, isLoggedInUser = false }) => {
                     Remove Skill
                   </button>
                 </div>
-              </Styles>
+              </Styles> */}
+              <AlertBox
+                onConfirm={() => handleRemoveSkill(skill)}
+                title="Are you sure you want to remove this skill"
+                content={skill.name}
+                trigger="Remove Skill"
+                skill={skill}
+              />
               <div className="grid__item__img">
                 <img
                   src={`https://avatars.dicebear.com/api/gridy/${skill.name}.svg`}
@@ -64,7 +72,7 @@ const TeachSkill = ({ skills, isLoggedInUser = false }) => {
         ))}
       </TeachSkillSection>
     </StyledSection>
-  )
-}
+  );
+};
 
-export default TeachSkill
+export default TeachSkill;

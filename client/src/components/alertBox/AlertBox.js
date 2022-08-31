@@ -95,6 +95,7 @@ const Button = styled("button", {
         padding: "5px",
         fontWeight: "600",
         cursor: "pointer",
+        width: "95%",
         boxShadow: `0 2px 10px ${blackA.blackA7}`,
         "&:hover": { backgroundColor: blackA.blackA7 },
         "&:focus": { boxShadow: `0 0 0 2px black` },
